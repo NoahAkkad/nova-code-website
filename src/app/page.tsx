@@ -8,17 +8,18 @@ import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
 
 import { benefitOne, benefitTwo } from "@/components/data";
+
 export default function Home() {
   return (
     <Container>
       <Hero />
       <SectionTitle
-        preTitle="Nextly Benefits"
-        title=" Why should you use this landing page"
+        preTitle="Nova Code Benefits"
+        title="Why Choose Nova Code?"
       >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Nova Code delivers high-quality websites and applications tailored to
+        your business needs. Our team of experts ensures your digital presence
+        stands out with innovative and scalable solutions.
       </SectionTitle>
 
       <Benefits data={benefitOne} />
@@ -26,28 +27,28 @@ export default function Home() {
 
       <SectionTitle
         preTitle="Watch a video"
-        title="Learn how to fullfil your needs"
+        title="Empowering Your Digital Journey"
       >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
+        Discover how Nova Code can transform your ideas into reality. Watch our
+        video to see how we can help fulfill your business needs with innovative
+        solutions.
       </SectionTitle>
 
       <Video videoId="fZ0D0cnR88E" />
 
       <SectionTitle
         preTitle="Testimonials"
-        title="Here's what our customers said"
+        title="What Our Clients Say"
       >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+        Hear from our satisfied clients and learn why Nova Code is the trusted
+        partner for businesses looking to innovate and grow.
       </SectionTitle>
 
       <Testimonials />
 
       <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
+        Got questions? We’ve got answers. Browse through our FAQ to learn more
+        about how Nova Code can help your business thrive.
       </SectionTitle>
 
       <Faq />

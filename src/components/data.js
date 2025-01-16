@@ -11,50 +11,49 @@ import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+  title: "Why Choose Nova Code?",
+  desc: "At Nova Code, we pride ourselves on delivering exceptional quality and results-driven solutions. Here’s why businesses trust us:",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "Customer-Centric Approach",
+      desc: "We understand your unique needs and craft solutions tailored to your goals.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "Boost Business Growth",
+      desc: "Our innovative solutions help improve customer acquisition and retention.",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "Expert Team",
+      desc: "Work with experienced professionals who are passionate about delivering excellence.",
       icon: <CursorArrowRaysIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "Our Advantages",
+  desc: "Explore more reasons why Nova Code is your ideal partner for digital transformation:",
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "Responsive Designs",
+      desc: "Our solutions are designed to work seamlessly across all devices.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "Powered by Modern Technology",
+      desc: "Built using cutting-edge tools like Next.js and TailwindCSS for performance and reliability.",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "Light & Dark Mode",
+      desc: "Enjoy visually appealing designs with customizable themes.",
       icon: <SunIcon />,
     },
   ],
 };
 
-
-export {benefitOne, benefitTwo};
+export { benefitOne, benefitTwo };

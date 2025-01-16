@@ -8,9 +8,8 @@ export const Navbar = () => {
   const navigation = [
     "Product",
     "Features",
-    "Pricing",
     "Company",
-    "Blog",
+    "About Us",
   ];
 
   return (
