@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Nova Code AB" }],
   alternates: {
-    canonical: "https://novacode.se/",
+    canonical: "https://novacode.se",
   },
   openGraph: {
     title: "Nova Code AB | Software Development, Mobile Apps & SaaS",
     description:
       "Swedish product studio delivering custom software solutions, mobile app development, and SaaS engineering from Göteborg.",
-    url: "https://novacode.se/",
+    url: "https://novacode.se",
     type: "website",
     images: [
       {

@@ -137,6 +137,10 @@ export default function ProductsPage() {
             name: "Nova Code AB",
             url: "https://novacode.se",
             logo: "https://novacode.se/img/logo.svg",
+            sameAs: [
+              "https://novacode.se",
+              "https://www.linkedin.com/company/nova-code-ab/",
+            ],
           },
           description:
             "Nova Play is a mobile gaming and reward app for Android built by Nova Code AB in Sweden, delivering immersive gameplay and reliable cloud performance.",
