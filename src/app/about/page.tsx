@@ -1,4 +1,50 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/Container";
+
+export const metadata: Metadata = {
+  title: "About Nova Code AB | Göteborg Software Development Company",
+  description:
+    "Learn about Nova Code AB in Göteborg, Sweden—software development specialists building mobile apps, SaaS platforms, and custom software solutions.",
+  keywords: [
+    "nova code ab",
+    "software development",
+    "mobile apps",
+    "SaaS",
+    "web development",
+    "Göteborg tech company",
+    "app development Sweden",
+    "Software development Sweden",
+    "Mobile app development Göteborg",
+    "Custom software solutions",
+  ],
+  authors: [{ name: "Nova Code AB" }],
+  alternates: {
+    canonical: "https://novacode.se/about",
+  },
+  openGraph: {
+    title: "About Nova Code AB | Göteborg Software Development Company",
+    description:
+      "Meet Nova Code AB, a Göteborg-based team delivering custom software solutions, SaaS development, and mobile app engineering across Sweden.",
+    url: "https://novacode.se/about",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Nova Code AB software development in Göteborg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Nova Code AB | Göteborg Software Development Company",
+    description:
+      "Discover the Nova Code AB team building mobile apps, SaaS platforms, and custom software solutions from Göteborg, Sweden.",
+    images: ["/img/hero.png"],
+    creator: "@novacodeab",
+  },
+};
 
 const values = ["Innovation", "Quality", "Scalability", "Transparency"];
 
@@ -15,6 +61,10 @@ export default function AboutPage() {
           </p>
           <p className="text-white">
             Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden
+          </p>
+          <p className="max-w-3xl text-secondary">
+            As a Göteborg tech company, we specialize in mobile app development, SaaS development in Sweden, and custom software
+            solutions that align design, engineering, and product strategy for growing teams.
           </p>
         </Container>
       </section>
