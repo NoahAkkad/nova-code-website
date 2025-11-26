@@ -1,46 +1,45 @@
-<p align="center">
- <a href="https://web3templates.com/?ref=nextly_github_logo">
- <img src="https://user-images.githubusercontent.com/1884712/132941531-0fdd7acf-47ca-424e-b77f-1fab2e372a37.png" alt="W3T" width="100" height="41"/>
- </a> 
- <br>
- <br>
-</p>
+# Nova Code Website
 
-# Nova Code website
+موقع تسويقي حديث مبني بـ **Next.js 14 (App Router)** و **Tailwind CSS** لعرض خدمات Nova Code. التصميم سريع الاستجابة، مع دعم الوضع الليلي، والتحسين للأداء وسهولة التعديل على المكونات.
 
-Marketing site built with Next.js 14 and Tailwind CSS for Nova Code.
+## المتطلبات
+- Node.js 18 أو أحدث
+- npm (مرفق مع Node)
 
-![image](https://user-images.githubusercontent.com/1884712/121497169-03228680-c990-11eb-975a-e77fddc43de0.png)
-
-## Local development
-
-1. Install dependencies
-
+## تشغيل المشروع محليًا
+1. تثبيت الاعتماديات:
    ```bash
    npm install
    ```
-
-2. Run the dev server
-
+2. تشغيل خادم التطوير:
    ```bash
    npm run dev
    ```
+3. افتح الرابط الذي يظهر في الطرفية (عادةً `http://localhost:3000`). أي تعديل على الملفات سيعيد التحميل تلقائيًا.
 
-3. Open the URL from the terminal output (typically `http://localhost:3000`).
+## أوامر npm المهمة
+- `npm run dev` — تشغيل خادم التطوير.
+- `npm run build` — إنشاء نسخة إنتاجية (Optimized build).
+- `npm start` — تشغيل الخادم باستخدام النسخة الإنتاجية بعد `npm run build`.
+- `npm run lint` — فحص جودة الشيفرة وفق إعدادات ESLint الخاصة بالمشروع.
 
-## Production build
+## بنية المجلدات المختصرة
+- `src/app/` — صفحات Next.js باستخدام App Router (بما فيها الصفحة الرئيسية والمقاطع المشتقة).
+- `src/components/` — المكونات القابلة لإعادة الاستخدام (أزرار، أقسام المحتوى، عناصر الهيرو... إلخ).
+- `public/` — الأصول الثابتة مثل الصور والأيقونات.
+- `tailwind.config.ts` و `postcss.config.mjs` — إعدادات Tailwind/PostCSS.
 
-```bash
-npm run build
-npm start
-```
+## النشر على Vercel
+المشروع مهيأ لـ Vercel، ويمكن نشره تلقائيًا من المستودع:
+1. اربط المستودع بحسابك في Vercel واختر الفرع الذي تريد نشره (عادةً `main`).
+2. بعد كل دفع (`git push`) سيبدأ بناء جديد تلقائيًا. يمكنك متابعة حالة البناء في لوحة التحكم.
+3. لإضافة دومين مخصص: انتقل إلى **Project → Settings → Domains** في Vercel، أضف الدومين واتبع تعليمات DNS (غالبًا CNAME إلى `cname.vercel-dns.com`).
+4. بعد تفعيل DNS ستظهر التحديثات على الدومين مباشرة بعد اكتمال كل عملية نشر.
 
-## Deploying on Vercel
+## تحسينات/تخصيص سريع
+- التعديل على النصوص والصور يتم من خلال ملفات `src/app` و `src/components`.
+- لتغيير الهوية البصرية (الألوان/الخطوط) عدّل إعدادات Tailwind في `tailwind.config.ts`.
+- لإضافة تتبع تحليلات أو سكربتات خارجية، استخدم تخطيط App Router ضمن `src/app/layout.tsx`.
 
-1. Connect the repository to Vercel and trigger a deployment (pushes to the linked branch will redeploy automatically).
-2. Add your custom domain in **Vercel → Settings → Domains** and follow the guided DNS instructions (usually a CNAME to `cname.vercel-dns.com`).
-3. Wait for DNS propagation; once active, every new push will rebuild and your changes will appear on the domain after the deployment completes.
-
-
-
-
+## المساهمة
+التعديلات والاقتراحات مرحب بها. افتح Issue أو أرسل Pull Request بعد التأكد من نجاح `npm run lint` وتشغيل المشروع محليًا.
