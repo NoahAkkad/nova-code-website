@@ -1,65 +1,45 @@
-<p align="center">
- <a href="https://web3templates.com/?ref=nextly_github_logo">
- <img src="https://user-images.githubusercontent.com/1884712/132941531-0fdd7acf-47ca-424e-b77f-1fab2e372a37.png" alt="W3T" width="100" height="41"/>
- </a> 
- <br>
- <br>
-</p>
+# Nova Code Website
 
-# Nextly - Landing Page Template with Next.js & Tailwind CSS
+Marketing site for Nova Code built with **Next.js 14 (App Router)** and **Tailwind CSS**. The layout is fully responsive, includes a dark mode, and is optimized for performance while staying easy to customize.
 
-Nextly is a free landing page & marketing website template for  startups and indie projects. Its built with Next.js & TailwindCSS.
-And its completely open-source.
- 
-![image](https://user-images.githubusercontent.com/1884712/121497169-03228680-c990-11eb-975a-e77fddc43de0.png)
+## Requirements
+- Node.js 18 or newer
+- npm (bundled with Node)
 
-## How to use
+## Run the project locally
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Open the URL printed in the terminal (usually `http://localhost:3000`). Edits hot-reload automatically.
 
-Click on the [Use Template](https://github.com/surjithctly/nextly-template/generate) button on this page to clone this respository to your github account. Or you can also clone this respository using terminal or bash. 
+## Key npm scripts
+- `npm run dev` — start the development server.
+- `npm run build` — produce an optimized production build.
+- `npm start` — serve the production build after running `npm run build`.
+- `npm run lint` — run ESLint using the project configuration.
 
-### 1\. Clone this Repository
+## Project structure
+- `src/app/` — Next.js pages/routes using the App Router (home and derived sections).
+- `src/components/` — reusable UI building blocks (buttons, content sections, hero elements, etc.).
+- `public/` — static assets such as images and icons.
+- `tailwind.config.ts` and `postcss.config.mjs` — Tailwind/PostCSS configuration.
 
-```bash
-git clone https://github.com/surjithctly/nextly-template.git
-```
+## Deploying to Vercel
+The project is ready for Vercel and can auto-deploy from the repository:
+1. Connect the repo to your Vercel account and choose the branch to deploy (typically `main`).
+2. Each `git push` triggers a new build automatically; track its status in the Vercel dashboard.
+3. To add a custom domain: go to **Project → Settings → Domains** in Vercel, add the domain, and follow the DNS instructions (usually a CNAME to `cname.vercel-dns.com`).
+4. Once DNS is active, updates appear on the domain as soon as each deployment finishes.
 
-### 2\. Navigate to the directory
+## Quick customization
+- Update copy and images in `src/app` and `src/components`.
+- Adjust the visual theme (colors/fonts) via Tailwind settings in `tailwind.config.ts`.
+- Add analytics or third-party scripts in the App Router layout at `src/app/layout.tsx`.
 
-```
-cd nextly-template
-```
-
-### 3\. Install dependencies
-
-```
-yarn install
-# or
-npm install
-```
-
-### 5\. Run Dev Server
-
-```
-yarn dev
-# or
-npm run dev
-```
-
-## Deploy with Vercel
-
-Deploy this template using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/surjithctly/nextly-template&project-name=nextly-template&repository-name=nextly-template)
-
-
-## Author
-
-Surjith S M ( [@surjithctly](https://surjithctly.in/) )
-
----
-
-[![image](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com/?utm_source=web3templates&utm_campaign=oss)
-
-
-
-
+## Contributing
+Suggestions and fixes are welcome. Please open an Issue or submit a Pull Request after confirming `npm run lint` passes and the project runs locally.
