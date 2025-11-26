@@ -116,12 +116,17 @@
   }
 
   .reveal {
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 1;
+    transform: none;
     transition: opacity 350ms ease, transform 350ms ease;
   }
 
-  .reveal.is-visible {
+  body.reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  body.reveal-ready .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }

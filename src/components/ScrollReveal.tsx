@@ -4,8 +4,13 @@ import { useEffect } from "react";
 
 export function ScrollReveal() {
   useEffect(() => {
+    document.body.classList.add("reveal-ready");
+
     const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-animate='fade']"));
-    if (!elements.length) return;
+    if (!elements.length)
+      return () => {
+        document.body.classList.remove("reveal-ready");
+      };
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +26,10 @@ export function ScrollReveal() {
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove("reveal-ready");
+    };
   }, []);
 
   return null;
