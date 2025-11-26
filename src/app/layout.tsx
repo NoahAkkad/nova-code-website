@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Nova Code | حلول برمجية وواجهات حديثة",
-  description: "نوفا كود تبني منتجات رقمية متكاملة: تطوير، تصميم، وأتمتة بجدول زمني واضح.",
+  title: "Nova Code AB | Smart Digital Product Studio",
+  description:
+    "Nova Code AB builds modern mobile apps, web applications, SaaS platforms, and custom software solutions with a premium, user-centered approach.",
 };
 
 export default function RootLayout({
@@ -19,13 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class">
-          <Navbar />
-          <div>{children}</div>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${inter.className} bg-black text-white antialiased`}>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
