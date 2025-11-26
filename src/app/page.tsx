@@ -1,5 +1,52 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+
+export const metadata: Metadata = {
+  title: "Nova Code AB | Software Development, Mobile Apps & SaaS in Sweden",
+  description:
+    "Discover Nova Code AB in Göteborg: software development experts crafting mobile apps, SaaS platforms, and custom digital solutions that help teams scale.",
+  keywords: [
+    "nova code ab",
+    "software development",
+    "mobile apps",
+    "SaaS",
+    "web development",
+    "Göteborg tech company",
+    "app development Sweden",
+    "Software development Sweden",
+    "Mobile app development Göteborg",
+    "Custom software solutions",
+    "Nova Play app",
+  ],
+  authors: [{ name: "Nova Code AB" }],
+  alternates: {
+    canonical: "https://novacode.se/",
+  },
+  openGraph: {
+    title: "Nova Code AB | Software Development, Mobile Apps & SaaS",
+    description:
+      "Swedish product studio delivering custom software solutions, mobile app development, and SaaS engineering from Göteborg.",
+    url: "https://novacode.se/",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Nova Code AB software development and mobile apps hero",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nova Code AB | Software Development, Mobile Apps & SaaS",
+    description:
+      "Nova Code AB crafts mobile apps, SaaS platforms, and custom software solutions for businesses across Sweden.",
+    images: ["/img/hero.png"],
+    creator: "@novacodeab",
+  },
+};
 
 const servicePreview = [
   "Mobile App Development",
@@ -53,13 +100,18 @@ export default function Home() {
             <p className="max-w-2xl text-lg text-secondary">
               Software Development | Mobile Apps | Digital Solutions
             </p>
+            <p className="max-w-3xl text-secondary">
+              Software development Sweden specialists delivering mobile app development in Göteborg, SaaS platforms, and custom software
+              solutions that keep your business performing fast.
+            </p>
             <div className="flex gap-4">
-              <Link href="/products" className="button-outline">
+              <Link href="/products" className="button-outline" title="Explore Nova Code AB products">
                 Explore Our Work
               </Link>
               <Link
                 href="/contact"
                 className="link-underline-gold inline-flex items-center text-secondary underline-offset-4 hover:text-white"
+                title="Book a call with Nova Code AB"
               >
                 Book a call
               </Link>
@@ -98,8 +150,15 @@ export default function Home() {
             <h2 className="heading-accent text-3xl font-semibold">Who we are</h2>
             <p className="max-w-3xl text-secondary">
               Nova Code AB is a Swedish software development company specializing in modern, scalable, and user-centered digital
-              products. We build mobile apps, web applications, SaaS platforms, and custom software solutions.
+              products. We build mobile apps, web applications, SaaS platforms, and custom software solutions with teams based in
+              Göteborg.
             </p>
+            <p className="max-w-3xl text-secondary">
+              Learn more about our story, team, and approach to mobile app development in Göteborg on the dedicated About page.
+            </p>
+            <Link href="/about" className="button-outline w-fit" title="Read more about Nova Code AB">
+              About Nova Code AB
+            </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {servicePreview.map((service) => (
@@ -109,6 +168,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Link href="/services" className="button-outline w-fit" title="View all Nova Code AB services">
+            View all services
+          </Link>
         </Container>
       </section>
 
@@ -118,7 +180,8 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Featured Product</p>
             <h2 className="heading-accent text-3xl font-semibold">Nova Play — Mobile Gaming Application</h2>
             <p className="text-secondary">
-              Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences.
+              Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences
+              for Android users in Sweden and beyond.
             </p>
             <ul className="space-y-3 text-secondary">
               <li className="flex items-start gap-3">
@@ -138,6 +201,8 @@ export default function Home() {
               href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
               className="button-outline w-fit"
               target="_blank"
+              rel="noreferrer"
+              title="Download Nova Play Android game on Google Play"
             >
               Download on Google Play
             </Link>
@@ -190,6 +255,8 @@ export default function Home() {
               href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
               className="button-outline"
               target="_blank"
+              rel="noreferrer"
+              title="See Nova Play reviews on Google Play"
             >
               See More Reviews on Google Play
             </Link>

@@ -1,5 +1,51 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Container } from "@/components/Container";
+
+export const metadata: Metadata = {
+  title: "Nova Play | Products | Nova Code AB Mobile Gaming App",
+  description:
+    "Discover Nova Play by Nova Code AB—an Android mobile gaming and reward app built in Sweden with cloud-native performance and engaging gameplay.",
+  keywords: [
+    "nova code ab",
+    "mobile apps",
+    "Nova Play app",
+    "mobile gaming",
+    "reward app",
+    "Android game",
+    "Google Play app",
+    "app development Sweden",
+    "Mobile app development Göteborg",
+  ],
+  authors: [{ name: "Nova Code AB" }],
+  alternates: {
+    canonical: "https://novacode.se/products",
+  },
+  openGraph: {
+    title: "Nova Play | Nova Code AB Mobile Gaming App",
+    description:
+      "Play Nova Play—our flagship Android reward app built by Nova Code AB for immersive mobile gaming audiences in Sweden and worldwide.",
+    url: "https://novacode.se/products",
+    type: "website",
+    images: [
+      {
+        url: "/img/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Nova Play mobile gaming app preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nova Play | Nova Code AB Mobile Gaming App",
+    description:
+      "Nova Play is the mobile gaming and reward app from Nova Code AB, available now on Google Play for Android players.",
+    images: ["/img/hero.png"],
+    creator: "@novacodeab",
+  },
+};
 
 const features = [
   "Reward-based gameplay loops",
@@ -25,10 +71,16 @@ export default function ProductsPage() {
           <p className="max-w-3xl text-lg text-secondary">
             Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences.
           </p>
+          <p className="max-w-3xl text-secondary">
+            Built by our app development company in Sweden, Nova Play combines mobile gaming, SaaS-backed infrastructure, and
+            custom software solutions to ensure reliable performance at scale.
+          </p>
           <Link
             href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
             className="button-outline w-fit"
             target="_blank"
+            rel="noreferrer"
+            title="Download Nova Play on Google Play"
           >
             Download on Google Play
           </Link>
@@ -74,6 +126,33 @@ export default function ProductsPage() {
           </div>
         </Container>
       </section>
+
+      <Script id="ld-json-product" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Nova Play",
+          brand: {
+            "@type": "Organization",
+            name: "Nova Code AB",
+            url: "https://novacode.se",
+            logo: "https://novacode.se/img/logo.svg",
+          },
+          description:
+            "Nova Play is a mobile gaming and reward app for Android built by Nova Code AB in Sweden, delivering immersive gameplay and reliable cloud performance.",
+          image: "https://novacode.se/img/hero.png",
+          url: "https://novacode.se/products",
+          category: "MobileApplication",
+          operatingSystem: "Android",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "SEK",
+            url: "https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en",
+            availability: "https://schema.org/InStock",
+          },
+        })}
+      </Script>
     </div>
   );
 }
