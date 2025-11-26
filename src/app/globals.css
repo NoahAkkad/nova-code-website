@@ -2,12 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
-  html,
+  :root {
+    --background: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    @apply dark:bg-trueGray-900;
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
+@layer components {
+  .section-shell {
+    @apply border-t border-white/10 py-20 lg:py-24;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .button-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-white px-5 py-2 text-sm font-semibold tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black;
+  }
+}
