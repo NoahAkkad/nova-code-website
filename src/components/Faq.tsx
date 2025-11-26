@@ -36,21 +36,23 @@ export const Faq = () => {
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
-  },
-  {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
-  },
-  {
-    question: "What is your refund policy? ",
+    question: "What services does Nova Code provide?",
     answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+      "We design and build websites, web applications, and tailored software that help businesses scale with confidence.",
   },
   {
-    question: "Do you offer technical support? ",
+    question: "How long does a typical project take?",
     answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+      "Most projects start delivering results within 4-8 weeks, depending on scope. We outline timelines clearly before kick-off.",
+  },
+  {
+    question: "Do you handle ongoing maintenance?",
+    answer:
+      "Yes. We offer support and optimization packages to keep your product secure, performant, and up to date after launch.",
+  },
+  {
+    question: "How do we start working together?",
+    answer:
+      "Book a free consultation to discuss your goals. We then propose a roadmap with milestones, pricing, and clear next steps.",
   },
 ];

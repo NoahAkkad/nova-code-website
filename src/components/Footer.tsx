@@ -29,25 +29,15 @@ export function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              Nextly is a free landing page & marketing website template for
-              startups and indie projects. Its built with Next.js & TailwindCSS.
-              And its completely open-source.
+              Nova Code crafts modern websites and applications that help
+              businesses grow. We combine strategy, design, and engineering to
+              deliver solutions that perform.
             </div>
 
             <div className="mt-5">
-              <a
-                href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
-                target="_blank"
-                rel="noopener"
-                className="relative block w-44"
-              >
-                <Image
-                  src="/img/vercel.svg"
-                  alt="Powered by Vercel"
-                  width="212"
-                  height="44"
-                />
-              </a>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                Contact us at <a className="underline" href="mailto:contact@nova-code.se">contact@nova-code.se</a>
+              </span>
             </div>
           </div>
 
@@ -113,7 +103,7 @@ export function Footer() {
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with by Noah Akkad{" "}
+          Copyright © {new Date().getFullYear()} Nova Code AB. Crafted by the Nova Code team.
         </div>
       </Container>
       {/* Do not remove this */}
