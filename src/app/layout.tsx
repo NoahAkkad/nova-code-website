@@ -71,7 +71,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preload" href="/img/logo.svg" as="image" />
-        <link rel="canonical" href="https://novacode.se" />
         <meta name="author" content="Nova Code AB" />
         <meta
           name="keywords"
@@ -92,7 +91,10 @@ export default function RootLayout({
             url: "https://novacode.se",
             logo: "/img/logo.svg",
             address: "Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden",
-            sameAs: ["https://www.linkedin.com/company/nova-code-ab/"],
+            sameAs: [
+              "https://novacode.se",
+              "https://www.linkedin.com/company/nova-code-ab/",
+            ],
           })}
         </Script>
         <Script id="ld-json-website" type="application/ld+json">
@@ -101,6 +103,10 @@ export default function RootLayout({
             "@type": "WebSite",
             url: "https://novacode.se",
             name: "Nova Code AB",
+            sameAs: [
+              "https://novacode.se",
+              "https://www.linkedin.com/company/nova-code-ab/",
+            ],
             potentialAction: {
               "@type": "SearchAction",
               target: "https://novacode.se/?s={search_term_string}",
@@ -124,7 +130,10 @@ export default function RootLayout({
             },
             url: "https://novacode.se",
             telephone: "+46 736 156 631",
-            sameAs: ["https://www.linkedin.com/company/nova-code-ab/"],
+            sameAs: [
+              "https://novacode.se",
+              "https://www.linkedin.com/company/nova-code-ab/",
+            ],
           })}
         </Script>
       </body>
