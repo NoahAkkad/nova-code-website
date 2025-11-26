@@ -60,6 +60,20 @@ export default function ProductsPage() {
           </div>
         </Container>
       </section>
+
+      <section className="section-shell border-y border-white/10">
+        <Container className="flex flex-col gap-4 text-center">
+          <h2 className="text-2xl font-semibold">Hear from our users</h2>
+          <p className="text-secondary">
+            Explore the latest community feedback and see why players love Nova Play.
+          </p>
+          <div className="flex justify-center">
+            <Link href="/#reviews" className="button-outline">
+              View App Reviews
+            </Link>
+          </div>
+        </Container>
+      </section>
     </div>
   );
 }

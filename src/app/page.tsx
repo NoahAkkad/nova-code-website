@@ -7,6 +7,25 @@ const servicePreview = [
   "Custom Software Solutions",
 ];
 
+const reviews = [
+  {
+    text: "Amazing app! Smooth experience and really fun to use.",
+    user: "– Sarah J.",
+  },
+  {
+    text: "Nova Play is definitely one of the best reward apps I’ve tried. Highly recommended!",
+    user: "– David M.",
+  },
+  {
+    text: "Great design, easy to use, and the rewards actually work.",
+    user: "– Lina R.",
+  },
+  {
+    text: "I love the interface and the performance. Very enjoyable experience!",
+    user: "– Alex P.",
+  },
+];
+
 export default function Home() {
   return (
     <div className="bg-black text-white">
@@ -120,6 +139,48 @@ export default function Home() {
                 resilient technology layers that scale with your audience.
               </p>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section id="reviews" className="section-shell">
+        <Container className="space-y-10">
+          <div className="space-y-3 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">App Reviews</p>
+            <h2 className="text-3xl font-semibold">What Our Users Say</h2>
+            <p className="text-secondary md:text-lg">
+              Users around the world enjoy Nova Play for its fun experience, smooth performance, and rewarding system. Here are
+              some of the latest reviews from our community.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {reviews.map((review) => (
+              <div
+                key={review.user}
+                className="flex h-full flex-col gap-4 rounded-2xl border border-[#222222] bg-[#0d0d0d] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+              >
+                <div className="flex items-center gap-1 text-yellow-400" aria-label="5 star rating">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <span key={index} aria-hidden="true">
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="text-lg leading-relaxed">{review.text}</p>
+                <p className="text-sm text-secondary">{review.user}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <Link
+              href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
+              className="button-outline"
+              target="_blank"
+            >
+              See More Reviews on Google Play
+            </Link>
           </div>
         </Container>
       </section>
