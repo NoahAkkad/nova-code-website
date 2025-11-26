@@ -21,7 +21,7 @@ export default function ContactPage() {
               <p>Company Name: Nova Code AB</p>
               <p>Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden</p>
               <p>Phone: +46 736 156 631</p>
-              <p>Email: contact@novacode.se</p>
+              <p>Email: info@novacode.se</p>
             </div>
           </div>
           <div className="card-surface reveal p-6" data-animate="fade">
