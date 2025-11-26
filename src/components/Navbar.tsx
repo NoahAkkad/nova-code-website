@@ -1,15 +1,16 @@
 "use client";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
+import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
 export const Navbar = () => {
   const navigation = [
-    "Product",
-    "Features",
-    "Company",
-    "About Us",
+    { label: "Services", href: "#services" },
+    { label: "Approach", href: "#approach" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -69,9 +70,9 @@ export const Navbar = () => {
 
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
-                    {navigation.map((item, index) => (
-                      <Link key={index} href="/" className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                          {item}
+                    {navigation.map((item) => (
+                      <Link key={item.href} href={item.href} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                          {item.label}
                       </Link>
                     ))}
                     <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">         
@@ -86,10 +87,10 @@ export const Navbar = () => {
         {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
-                <Link href="/" className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                    {menu}
+            {navigation.map((menu) => (
+              <li className="mr-3 nav__item" key={menu.href}>
+                <Link href={menu.href} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                    {menu.label}
                 </Link>
               </li>
             ))}

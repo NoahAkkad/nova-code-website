@@ -4,8 +4,17 @@ import React from "react";
 import { Container } from "@/components/Container";
 
 export function Footer() {
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
-  const legal = ["Terms", "Privacy", "Legal"];
+  const navigation = [
+    { label: "Services", href: "#services" },
+    { label: "Approach", href: "#approach" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "FAQ", href: "#faq" },
+  ];
+  const legal = [
+    { label: "Contact", href: "#contact" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+  ];
   return (
     <div className="relative">
       <Container>
@@ -43,26 +52,26 @@ export function Footer() {
 
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {navigation.map((item, index) => (
+              {navigation.map((item) => (
                 <Link
-                  key={index}
-                  href="/"
+                  key={item.href}
+                  href={item.href}
                   className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>
           </div>
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
+              {legal.map((item) => (
                 <Link
-                  key={index}
-                  href="/"
+                  key={item.href}
+                  href={item.href}
                   className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </div>

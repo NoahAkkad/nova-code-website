@@ -14,6 +14,7 @@ export default function Home() {
     <Container>
       <Hero />
       <SectionTitle
+        id="services"
         preTitle="Nova Code Benefits"
         title="Why Choose Nova Code?"
       >
@@ -26,6 +27,7 @@ export default function Home() {
       <Benefits imgPos="right" data={benefitTwo} />
 
       <SectionTitle
+        id="approach"
         preTitle="Watch a video"
         title="Empowering Your Digital Journey"
       >
@@ -37,6 +39,7 @@ export default function Home() {
       <Video videoId="fZ0D0cnR88E" />
 
       <SectionTitle
+        id="testimonials"
         preTitle="Testimonials"
         title="What Our Clients Say"
       >
@@ -46,13 +49,13 @@ export default function Home() {
 
       <Testimonials />
 
-      <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
+      <SectionTitle id="faq" preTitle="FAQ" title="Frequently Asked Questions">
         Got questions? We’ve got answers. Browse through our FAQ to learn more
         about how Nova Code can help your business thrive.
       </SectionTitle>
 
       <Faq />
-      <Cta />
+      <Cta id="contact" />
     </Container>
   );
 }
