@@ -52,7 +52,7 @@ export function Footer() {
           <div>
             <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Follow</p>
             <div className="flex flex-col gap-2 text-secondary">
-              <Link href="https://www.linkedin.com" className="link-underline-gold transition hover:text-white">
+              <Link href="https://www.linkedin.com/company/nova-code-ab" className="link-underline-gold transition hover:text-white">
                 LinkedIn
               </Link>
               <Link href="https://www.twitter.com" className="link-underline-gold transition hover:text-white">
