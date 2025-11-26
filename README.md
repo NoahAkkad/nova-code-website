@@ -1,45 +1,45 @@
 # Nova Code Website
 
-موقع تسويقي حديث مبني بـ **Next.js 14 (App Router)** و **Tailwind CSS** لعرض خدمات Nova Code. التصميم سريع الاستجابة، مع دعم الوضع الليلي، والتحسين للأداء وسهولة التعديل على المكونات.
+Marketing site for Nova Code built with **Next.js 14 (App Router)** and **Tailwind CSS**. The layout is fully responsive, includes a dark mode, and is optimized for performance while staying easy to customize.
 
-## المتطلبات
-- Node.js 18 أو أحدث
-- npm (مرفق مع Node)
+## Requirements
+- Node.js 18 or newer
+- npm (bundled with Node)
 
-## تشغيل المشروع محليًا
-1. تثبيت الاعتماديات:
+## Run the project locally
+1. Install dependencies:
    ```bash
    npm install
    ```
-2. تشغيل خادم التطوير:
+2. Start the dev server:
    ```bash
    npm run dev
    ```
-3. افتح الرابط الذي يظهر في الطرفية (عادةً `http://localhost:3000`). أي تعديل على الملفات سيعيد التحميل تلقائيًا.
+3. Open the URL printed in the terminal (usually `http://localhost:3000`). Edits hot-reload automatically.
 
-## أوامر npm المهمة
-- `npm run dev` — تشغيل خادم التطوير.
-- `npm run build` — إنشاء نسخة إنتاجية (Optimized build).
-- `npm start` — تشغيل الخادم باستخدام النسخة الإنتاجية بعد `npm run build`.
-- `npm run lint` — فحص جودة الشيفرة وفق إعدادات ESLint الخاصة بالمشروع.
+## Key npm scripts
+- `npm run dev` — start the development server.
+- `npm run build` — produce an optimized production build.
+- `npm start` — serve the production build after running `npm run build`.
+- `npm run lint` — run ESLint using the project configuration.
 
-## بنية المجلدات المختصرة
-- `src/app/` — صفحات Next.js باستخدام App Router (بما فيها الصفحة الرئيسية والمقاطع المشتقة).
-- `src/components/` — المكونات القابلة لإعادة الاستخدام (أزرار، أقسام المحتوى، عناصر الهيرو... إلخ).
-- `public/` — الأصول الثابتة مثل الصور والأيقونات.
-- `tailwind.config.ts` و `postcss.config.mjs` — إعدادات Tailwind/PostCSS.
+## Project structure
+- `src/app/` — Next.js pages/routes using the App Router (home and derived sections).
+- `src/components/` — reusable UI building blocks (buttons, content sections, hero elements, etc.).
+- `public/` — static assets such as images and icons.
+- `tailwind.config.ts` and `postcss.config.mjs` — Tailwind/PostCSS configuration.
 
-## النشر على Vercel
-المشروع مهيأ لـ Vercel، ويمكن نشره تلقائيًا من المستودع:
-1. اربط المستودع بحسابك في Vercel واختر الفرع الذي تريد نشره (عادةً `main`).
-2. بعد كل دفع (`git push`) سيبدأ بناء جديد تلقائيًا. يمكنك متابعة حالة البناء في لوحة التحكم.
-3. لإضافة دومين مخصص: انتقل إلى **Project → Settings → Domains** في Vercel، أضف الدومين واتبع تعليمات DNS (غالبًا CNAME إلى `cname.vercel-dns.com`).
-4. بعد تفعيل DNS ستظهر التحديثات على الدومين مباشرة بعد اكتمال كل عملية نشر.
+## Deploying to Vercel
+The project is ready for Vercel and can auto-deploy from the repository:
+1. Connect the repo to your Vercel account and choose the branch to deploy (typically `main`).
+2. Each `git push` triggers a new build automatically; track its status in the Vercel dashboard.
+3. To add a custom domain: go to **Project → Settings → Domains** in Vercel, add the domain, and follow the DNS instructions (usually a CNAME to `cname.vercel-dns.com`).
+4. Once DNS is active, updates appear on the domain as soon as each deployment finishes.
 
-## تحسينات/تخصيص سريع
-- التعديل على النصوص والصور يتم من خلال ملفات `src/app` و `src/components`.
-- لتغيير الهوية البصرية (الألوان/الخطوط) عدّل إعدادات Tailwind في `tailwind.config.ts`.
-- لإضافة تتبع تحليلات أو سكربتات خارجية، استخدم تخطيط App Router ضمن `src/app/layout.tsx`.
+## Quick customization
+- Update copy and images in `src/app` and `src/components`.
+- Adjust the visual theme (colors/fonts) via Tailwind settings in `tailwind.config.ts`.
+- Add analytics or third-party scripts in the App Router layout at `src/app/layout.tsx`.
 
-## المساهمة
-التعديلات والاقتراحات مرحب بها. افتح Issue أو أرسل Pull Request بعد التأكد من نجاح `npm run lint` وتشغيل المشروع محليًا.
+## Contributing
+Suggestions and fixes are welcome. Please open an Issue or submit a Pull Request after confirming `npm run lint` passes and the project runs locally.
