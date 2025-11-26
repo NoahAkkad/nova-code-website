@@ -23,7 +23,10 @@ export function Footer() {
           <p className="text-secondary">
             Swedish software development company delivering premium, modern, and scalable digital products for ambitious teams.
           </p>
-          <p className="text-secondary">Location: Sweden · Phone: +46 736 156 631 · Email: contact@novacode.se</p>
+          <p className="text-secondary">
+            Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden · Phone: +46 736 156 631 · Email:
+            contact@novacode.se
+          </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           <div>

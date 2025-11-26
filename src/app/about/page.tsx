@@ -13,6 +13,9 @@ export default function AboutPage() {
             Nova Code AB is a Swedish software development company focused on building high-performance digital products.
             Founded in 2025, our mission is to deliver innovative, user-focused solutions using modern technologies.
           </p>
+          <p className="text-white">
+            Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden
+          </p>
         </Container>
       </section>
 
