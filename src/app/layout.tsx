@@ -9,6 +9,10 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+  "GOOGLE_VERIFICATION_CODE_HERE";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://novacode.se"),
   title: "Nova Code AB | Smart Digital Product Studio in Göteborg",
@@ -75,6 +79,10 @@ export default function RootLayout({
         <meta
           name="keywords"
           content="nova code ab, software development, mobile apps, SaaS, web development, Göteborg tech company, app development Sweden"
+        />
+        <meta
+          name="google-site-verification"
+          content={googleSiteVerification}
         />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
