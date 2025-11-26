@@ -91,9 +91,6 @@ export default function Home() {
           data-animate="fade"
         >
           <div className="space-y-6 lg:w-3/5">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-              Nova Code AB · Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden
-            </p>
             <h1 className="heading-accent text-4xl font-semibold leading-tight sm:text-5xl">
               We Build Smart Digital Products
             </h1>
@@ -127,7 +124,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm text-secondary">Location</p>
-                  <p className="text-xl font-semibold">Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden</p>
+                  <p className="text-xl font-semibold">Gothenburg, Sweden</p>
                 </div>
                 <div>
                   <p className="text-sm text-secondary">Focus</p>
