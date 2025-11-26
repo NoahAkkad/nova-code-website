@@ -1,319 +1,189 @@
+import Link from "next/link";
 import { Container } from "@/components/Container";
 
-const services = [
-  "Mobile App Development (Android & iOS)",
-  "Web Applications & SaaS Platforms",
-  "Custom Software Development",
-  "UI/UX Design & Prototyping",
-  "Full-Cycle Development & Maintenance",
-  "Cloud-based Solutions",
-  "Backend & API Development",
+const servicePreview = [
+  "Mobile App Development",
+  "Web Applications & SaaS",
+  "Custom Software Solutions",
 ];
 
-const technologyStack = [
+const reviews = [
   {
-    title: "Frontend",
-    items: ["React.js", "Next.js", "JavaScript", "TypeScript"],
+    text: "Amazing app! Smooth experience and really fun to use.",
+    user: "– Sarah J.",
   },
   {
-    title: "Backend",
-    items: ["Node.js", ".NET / C#", "Python", "PHP"],
+    text: "Nova Play is definitely one of the best reward apps I’ve tried. Highly recommended!",
+    user: "– David M.",
   },
   {
-    title: "Mobile",
-    items: ["Kotlin", "Java (Android)", "Swift (iOS)"],
+    text: "Great design, easy to use, and the rewards actually work.",
+    user: "– Lina R.",
   },
   {
-    title: "Cloud & Hosting",
-    items: ["AWS", "Azure", "DigitalOcean"],
+    text: "I love the interface and the performance. Very enjoyable experience!",
+    user: "– Alex P.",
   },
-  {
-    title: "Databases",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
-  },
-];
-
-const values = [
-  "Innovation",
-  "Quality",
-  "Transparency",
-  "User-Centered Design",
-  "Scalability",
 ];
 
 export default function Home() {
   return (
-    <main className="bg-white text-gray-900">
-      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-indigo-100/60">
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_20%,#c7d2fe,transparent_35%),radial-gradient(circle_at_80%_0%,#e0f2fe,transparent_30%),radial-gradient(circle_at_50%_80%,#ede9fe,transparent_30%)]" />
-        <Container className="relative grid gap-10 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
-          <div className="space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100">
-              Nova Code AB · Sweden
-            </span>
-            <h1 className="text-4xl font-semibold leading-tight text-gray-900 sm:text-5xl">
-              Company Profile
+    <div className="bg-black text-white">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black to-black/40" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
+          <div className="absolute bottom-10 right-0 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08)_0,_transparent_45%)]" />
+        </div>
+        <Container className="relative flex flex-col gap-10 py-24 lg:flex-row lg:items-center lg:py-32">
+          <div className="space-y-6 lg:w-3/5">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">Nova Code AB · Sweden</p>
+            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+              We Build Smart Digital Products
             </h1>
-            <p className="max-w-3xl text-lg text-gray-700">
-              Nova Code AB is a Swedish software development company specialized in building modern, scalable, and high-performance digital products. The team crafts mobile apps, web applications, SaaS platforms, and custom solutions that blend technology, creativity, and user-centered design.
+            <p className="max-w-2xl text-lg text-secondary">
+              Software Development | Mobile Apps | Digital Solutions
             </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                <p className="text-sm font-semibold text-indigo-700">Founded</p>
-                <p className="text-lg font-semibold text-gray-900">2025</p>
-              </div>
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                <p className="text-sm font-semibold text-indigo-700">Location</p>
-                <p className="text-lg font-semibold text-gray-900">Sweden</p>
-              </div>
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                <p className="text-sm font-semibold text-indigo-700">Company Size</p>
-                <p className="text-lg font-semibold text-gray-900">2–10 employees</p>
-              </div>
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm">
-                <p className="text-sm font-semibold text-indigo-700">Industry</p>
-                <p className="text-lg font-semibold text-gray-900">Software Development</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 text-sm text-gray-700">
-              <a
-                href="https://www.novacode.se"
-                className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white shadow transition hover:bg-indigo-700"
-              >
-                Visit Website
-              </a>
-              <span className="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-white px-4 py-2 text-indigo-800 shadow-sm">
-                Phone: +46 736 156 631
-              </span>
+            <div className="flex gap-4">
+              <Link href="/products" className="button-outline">
+                Explore Our Work
+              </Link>
+              <Link href="/contact" className="inline-flex items-center text-secondary underline-offset-4 hover:text-white">
+                Book a call
+              </Link>
             </div>
           </div>
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl bg-white p-8 shadow-xl shadow-indigo-100 ring-1 ring-indigo-100">
-              <div className="absolute -right-10 -top-12 h-48 w-48 rounded-full bg-indigo-100 blur-3xl" aria-hidden />
-              <div className="space-y-4 text-gray-800">
-                <h3 className="text-2xl font-semibold text-gray-900">What We Build</h3>
-                <p>
-                  Nova Code AB delivers end-to-end software products—from discovery and design to development and maintenance. Each engagement focuses on performance, security, and measurable business outcomes.
-                </p>
-                <ul className="grid gap-2 text-sm text-gray-700 sm:grid-cols-2">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 text-indigo-600">•</span>
-                    <span>Mobile and web applications tailored to modern user journeys.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 text-indigo-600">•</span>
-                    <span>Cloud-native SaaS platforms with scalable architectures.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 text-indigo-600">•</span>
-                    <span>APIs, integrations, and automation that streamline operations.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 text-indigo-600">•</span>
-                    <span>Design systems and prototypes that keep experiences cohesive.</span>
-                  </li>
-                </ul>
+          <div className="lg:w-2/5">
+            <div className="card-surface p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">Highlights</p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p className="text-sm text-secondary">Founded</p>
+                  <p className="text-xl font-semibold">2025</p>
+                </div>
+                <div>
+                  <p className="text-sm text-secondary">Location</p>
+                  <p className="text-xl font-semibold">Sweden</p>
+                </div>
+                <div>
+                  <p className="text-sm text-secondary">Focus</p>
+                  <p className="text-xl font-semibold">Digital Products</p>
+                </div>
+                <div>
+                  <p className="text-sm text-secondary">Team</p>
+                  <p className="text-xl font-semibold">Design & Engineering</p>
+                </div>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-gray-100 bg-white py-16 lg:py-20">
-        <Container className="grid gap-10 lg:grid-cols-3 lg:items-start">
-          <div className="space-y-4 lg:col-span-2">
-            <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">Mission & Vision</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl border border-gray-100 bg-indigo-50/60 p-6 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Mission</p>
-                <p className="mt-3 text-gray-700">
-                  Create smart, efficient, and user-centered digital solutions that transform ideas into successful technologies and deliver real value to users and businesses.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Vision</p>
-                <p className="mt-3 text-gray-700">
-                  To become a leading Swedish software company recognized for high-quality, innovative, and scalable digital products used across global markets.
-                </p>
-              </div>
-            </div>
+      <section className="section-shell">
+        <Container className="space-y-8">
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">About Preview</p>
+            <h2 className="text-3xl font-semibold">Who we are</h2>
+            <p className="max-w-3xl text-secondary">
+              Nova Code AB is a Swedish software development company specializing in modern, scalable, and user-centered digital
+              products. We build mobile apps, web applications, SaaS platforms, and custom software solutions.
+            </p>
           </div>
-          <div className="space-y-4 rounded-2xl border border-indigo-100 bg-gradient-to-b from-indigo-50 to-white p-6 shadow-sm">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-700">Key Facts</p>
-            <ul className="space-y-3 text-gray-700">
+          <div className="grid gap-6 md:grid-cols-3">
+            {servicePreview.map((service) => (
+              <div key={service} className="card-surface p-5">
+                <p className="text-lg font-semibold">{service}</p>
+                <p className="mt-2 text-sm text-secondary">Sharp execution, transparent delivery, and products built for growth.</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-shell">
+        <Container className="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Featured Product</p>
+            <h2 className="text-3xl font-semibold">Nova Play — Mobile Gaming Application</h2>
+            <p className="text-secondary">
+              Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences.
+            </p>
+            <ul className="space-y-3 text-secondary">
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Founded: 2025</span>
+                <span className="mt-1 h-2 w-2 rounded-full bg-white" />
+                <span>Immersive, high-performance mobile experience.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Location: Sweden</span>
+                <span className="mt-1 h-2 w-2 rounded-full bg-white" />
+                <span>Reward mechanisms that keep players engaged.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Industry: Software Development</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Company Size: 2–10 employees</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Website: www.novacode.se</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-600" />
-                <span>Phone: +46 736 156 631</span>
+                <span className="mt-1 h-2 w-2 rounded-full bg-white" />
+                <span>Built with scalable cloud-first infrastructure.</span>
               </li>
             </ul>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-gray-50 py-16 lg:py-24">
-        <Container className="space-y-10">
-          <div className="space-y-3 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-600">Services</p>
-            <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">Solutions Crafted for Growth</h2>
-            <p className="mx-auto max-w-3xl text-gray-700">
-              Nova Code AB delivers focused expertise across the full software lifecycle—from ideation to launch and continuous optimization.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div
-                key={service}
-                className="group relative h-full rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-white opacity-0 transition group-hover:opacity-100" />
-                <div className="relative flex items-start gap-3">
-                  <span className="mt-1 text-lg text-indigo-600">•</span>
-                  <p className="text-lg font-semibold text-gray-900">{service}</p>
-                </div>
-                <p className="relative mt-3 text-sm text-gray-700">
-                  Tailored deliverables, transparent communication, and measurable outcomes at every stage.
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-gray-100 bg-white py-16 lg:py-24">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-600">Technology Stack</p>
-            <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">Modern, Reliable, and Scalable</h2>
-            <p className="max-w-3xl text-gray-700">
-              The team selects proven technologies that match each project’s performance, security, and maintainability requirements. The stack spans frontend, backend, mobile, cloud, and databases to deliver cohesive products.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {technologyStack.map((category) => (
-              <div
-                key={category.title}
-                className="rounded-2xl border border-gray-100 bg-gray-50 p-6 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-indigo-700">
-                  {category.title}
-                </p>
-                <ul className="mt-3 space-y-2 text-gray-700">
-                  {category.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-600" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 py-16 text-white lg:py-24">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-200">Flagship Product</p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Nova Play</h2>
-            <p className="text-indigo-50">
-              Nova Play is the main active product developed by Nova Code AB. It is a mobile gaming platform that provides interactive entertainment with real-value engagement features, blending smooth experiences with secure transactions.
-            </p>
-            <a
+            <Link
               href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
-              className="inline-flex w-fit items-center gap-2 rounded-lg bg-white px-5 py-3 text-indigo-800 shadow hover:bg-indigo-50"
+              className="button-outline w-fit"
+              target="_blank"
             >
               Download on Google Play
-              <span aria-hidden>→</span>
-            </a>
+            </Link>
           </div>
-          <div className="relative">
-            <div className="rounded-3xl bg-white/10 p-8 shadow-2xl shadow-indigo-900/30 ring-1 ring-white/10 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-100">Engagement Highlights</p>
-              <ul className="mt-4 space-y-3 text-indigo-50">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-white" />
-                  <span>Interactive mobile gaming experience focused on long-term player value.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-white" />
-                  <span>Real-value engagement features with transparent mechanics.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-white" />
-                  <span>Secure integrations, scalable infrastructure, and continuous updates.</span>
-                </li>
-              </ul>
+          <div className="card-surface p-6">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <h3 className="text-xl font-semibold">Our promise</h3>
+              <p className="mt-2 text-secondary">
+                We design and engineer every Nova Code AB product to feel premium: minimalistic visuals, precise motion, and
+                resilient technology layers that scale with your audience.
+              </p>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-gray-100 bg-white py-16 lg:py-24">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-600">Company Values</p>
-            <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">Principles That Guide Every Build</h2>
-            <p className="text-gray-700">
-              Nova Code AB operates with clarity and consistency—prioritizing innovation, reliability, and human-centered outcomes.
+      <section id="reviews" className="section-shell">
+        <Container className="space-y-10">
+          <div className="space-y-3 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">App Reviews</p>
+            <h2 className="text-3xl font-semibold">What Our Users Say</h2>
+            <p className="text-secondary md:text-lg">
+              Users around the world enjoy Nova Play for its fun experience, smooth performance, and rewarding system. Here are
+              some of the latest reviews from our community.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {values.map((value) => (
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {reviews.map((review) => (
               <div
-                key={value}
-                className="rounded-2xl border border-gray-100 bg-gray-50 p-6 text-gray-900 shadow-sm"
+                key={review.user}
+                className="flex h-full flex-col gap-4 rounded-2xl border border-[#222222] bg-[#0d0d0d] p-5 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
               >
-                <p className="text-lg font-semibold text-indigo-700">{value}</p>
-                <p className="mt-2 text-sm text-gray-700">
-                  A commitment to {value.toLowerCase()} is embedded into planning, delivery, and support.
-                </p>
+                <div className="flex items-center gap-1 text-yellow-400" aria-label="5 star rating">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <span key={index} aria-hidden="true">
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="text-lg leading-relaxed">{review.text}</p>
+                <p className="text-sm text-secondary">{review.user}</p>
               </div>
             ))}
           </div>
-        </Container>
-      </section>
 
-      <section id="contact" className="bg-gray-50 py-16 lg:py-20">
-        <Container className="space-y-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-600">Contact</p>
-          <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">Let’s Collaborate</h2>
-          <p className="mx-auto max-w-2xl text-gray-700">
-            Nova Code AB is open to partnerships and custom development projects. Contact us to bring your digital product idea to life and build solutions that scale with your ambitions.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-800">
-            <a
-              href="https://www.novacode.se"
-              className="rounded-lg bg-indigo-600 px-5 py-3 text-white shadow transition hover:bg-indigo-700"
+          <div className="flex justify-center">
+            <Link
+              href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
+              className="button-outline"
+              target="_blank"
             >
-              www.novacode.se
-            </a>
-            <span className="rounded-lg border border-indigo-100 bg-white px-5 py-3 shadow-sm">
-              Phone: +46 736 156 631
-            </span>
+              See More Reviews on Google Play
+            </Link>
           </div>
         </Container>
       </section>
-    </main>
+    </div>
   );
 }

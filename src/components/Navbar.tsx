@@ -1,104 +1,72 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
-import Image from "next/image";
-import { Disclosure } from "@headlessui/react";
+import { Container } from "./Container";
 
-const navigation = [
-  { label: "الرئيسية", href: "#" },
-  { label: "خدماتنا", href: "#services" },
-  { label: "أعمالنا", href: "#projects" },
-  { label: "آلية العمل", href: "#process" },
-  { label: "تواصل", href: "#contact" },
+const links = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="w-full bg-white/80 backdrop-blur">
-      <nav className="container relative flex flex-wrap items-center justify-between p-6 mx-auto lg:justify-between xl:px-0">
-        <Link href="#" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 rtl:space-x-reverse">
-          <Image src="/img/logo.svg" width="32" height="32" alt="Nova Code" className="w-8" />
-          <span className="text-gray-900">Nova Code</span>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+      <Container className="flex items-center justify-between py-4">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 p-2 font-semibold">
+            NC
+          </div>
+          <div className="leading-tight">
+            <p className="text-base font-semibold">Nova Code AB</p>
+            <p className="text-xs text-white/70">Premium software company</p>
+          </div>
         </Link>
 
-        <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
-          <ThemeChanger />
-          <div className="hidden mr-3 lg:flex nav__item">
-            <Link
-              href="#contact"
-              className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5 shadow-sm hover:bg-indigo-700"
-            >
-              تحدث معنا
+        <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] md:flex">
+          {links.map((item) => (
+            <Link key={item.href} href={item.href} className="text-white/80 transition hover:text-white">
+              {item.label}
             </Link>
-          </div>
-        </div>
+          ))}
+        </nav>
 
-        <Disclosure>
-          {({ open }) => (
-            <>
-              <Disclosure.Button
-                aria-label="Toggle Menu"
-                className="px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white"
+            aria-label="Toggle navigation"
+          >
+            <span className="sr-only">Toggle navigation</span>
+            <div className="space-y-1.5">
+              <span className={`block h-0.5 w-6 bg-white transition ${open ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-white transition ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-white transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+            </div>
+          </button>
+        </div>
+      </Container>
+
+      {open && (
+        <div className="border-t border-white/10 bg-black/95 md:hidden">
+          <Container className="flex flex-col gap-2 py-4">
+            {links.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:bg-white/5 hover:text-white"
               >
-                <svg
-                  className="w-6 h-6 fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  {open && (
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                    />
-                  )}
-                  {!open && (
-                    <path
-                      fillRule="evenodd"
-                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                    />
-                  )}
-                </svg>
-              </Disclosure.Button>
-
-              <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
-                <>
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="w-full px-4 py-2 -ml-4 text-gray-700 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <Link
-                    href="#contact"
-                    className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
-                  >
-                    احجز مكالمة
-                  </Link>
-                </>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
-
-        <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-3 list-none lg:pt-0 lg:flex">
-            {navigation.map((menu) => (
-              <li className="mr-3 nav__item" key={menu.label}>
-                <Link
-                  href={menu.href}
-                  className="inline-block px-4 py-2 text-sm font-medium text-gray-800 rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
-                >
-                  {menu.label}
-                </Link>
-              </li>
+                {item.label}
+              </Link>
             ))}
-          </ul>
+          </Container>
         </div>
-      </nav>
-    </div>
+      )}
+    </header>
   );
 };

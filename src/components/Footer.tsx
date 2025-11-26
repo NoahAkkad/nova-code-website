@@ -1,110 +1,84 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Container } from "@/components/Container";
 
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "Contact", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+];
+
 export function Footer() {
-  const quickLinks = [
-    { label: "خدماتنا", href: "#services" },
-    { label: "أعمالنا", href: "#projects" },
-    { label: "آلية العمل", href: "#process" },
-    { label: "تواصل", href: "#contact" },
-  ];
-
-  const contact = [
-    { label: "hello@novacode.com", href: "mailto:hello@novacode.com" },
-    { label: "+46 700 123 456", href: "tel:+46700123456" },
-  ];
-
   return (
-    <div className="bg-white">
-      <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 lg:grid-cols-5">
-          <div className="lg:col-span-2 space-y-4">
-            <Link
-              href="#"
-              className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 rtl:space-x-reverse"
-            >
-              <Image src="/img/logo.svg" alt="Nova Code" width="32" height="32" className="w-8" />
-              <span className="text-gray-900">Nova Code</span>
+    <footer className="border-t border-white/10 bg-black py-10 text-sm text-white">
+      <Container className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+        <div className="max-w-xl space-y-3">
+          <h3 className="text-lg font-semibold">Nova Code AB</h3>
+          <p className="text-secondary">
+            Swedish software development company delivering premium, modern, and scalable digital products for ambitious teams.
+          </p>
+          <p className="text-secondary">
+            Location: Sweden · Phone: +46 736 156 631 · Email: {" "}
+            <Link href="mailto:info@novacode.se" className="underline underline-offset-2 hover:text-white">
+              info@novacode.se
             </Link>
-            <p className="max-w-md text-gray-600">
-              شركة برمجيات متخصصة في بناء المنتجات الرقمية السريعة والموثوقة. نعمل مع فرق الأعمال
-              لتوصيل الأفكار إلى تجربة مستخدم كاملة بجدول زمني واضح.
-            </p>
-            <div className="flex flex-wrap gap-3 text-sm text-gray-500">
-              <span className="rounded-full bg-indigo-50 px-3 py-1 text-indigo-700">استشارات تقنية</span>
-              <span className="rounded-full bg-indigo-50 px-3 py-1 text-indigo-700">UX/UI</span>
-              <span className="rounded-full bg-indigo-50 px-3 py-1 text-indigo-700">SaaS</span>
-              <span className="rounded-full bg-indigo-50 px-3 py-1 text-indigo-700">تكامل الأنظمة</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">روابط سريعة</h3>
-            <div className="mt-4 flex flex-col">
-              {quickLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="w-full px-0 py-2 text-gray-600 hover:text-indigo-600"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">تواصل معنا</h3>
-            <div className="mt-4 flex flex-col">
-              {contact.map((item) => (
-                <Link key={item.label} href={item.href} className="py-2 text-gray-600 hover:text-indigo-600">
-                  {item.label}
-                </Link>
-              ))}
-              <p className="py-2 text-gray-600">ستوكهولم - الرياض - دبي</p>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900">تابعنا</h3>
-            <div className="flex mt-4 space-x-4 rtl:space-x-reverse text-gray-500">
-              <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <Linkedin />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
-                <Twitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                <Instagram />
-              </a>
-            </div>
-            <p className="mt-4 text-sm text-gray-500">نرد خلال يومي عمل.</p>
-          </div>
+          </p>
         </div>
-
-        <div className="my-8 text-sm text-center text-gray-500">
-          © {new Date().getFullYear()} Nova Code. كل الحقوق محفوظة.
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Quick Links</p>
+            <div className="flex flex-col gap-2 text-secondary">
+              {quickLinks.map((item) => (
+                <Link key={item.label} href={item.href} className="transition hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Legal</p>
+            <div className="flex flex-col gap-2 text-secondary">
+              {legalLinks.map((item) => (
+                <Link key={item.label} href={item.href} className="transition hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Follow</p>
+            <div className="flex flex-col gap-2 text-secondary">
+              <Link href="https://www.linkedin.com" className="transition hover:text-white">
+                LinkedIn
+              </Link>
+              <Link href="https://www.twitter.com" className="transition hover:text-white">
+                Twitter
+              </Link>
+              <Link href="https://www.instagram.com" className="transition hover:text-white">
+                Instagram
+              </Link>
+            </div>
+          </div>
         </div>
       </Container>
-    </div>
+      <div className="mt-10 border-t border-white/10 pt-6">
+        <Container className="flex flex-col gap-2 text-secondary sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-white">© 2025 Nova Code AB. All rights reserved.</p>
+          <div className="flex gap-4 text-secondary">
+            {legalLinks.map((item) => (
+              <Link key={item.label} href={item.href} className="transition hover:text-white">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </div>
+    </footer>
   );
 }
-
-const Twitter = ({ size = 22 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M24 4.37a9.6 9.6 0 0 1-2.83.8 5.04 5.04 0 0 0 2.17-2.8c-.95.58-2 1-3.13 1.22A4.86 4.86 0 0 0 16.61 2a4.99 4.99 0 0 0-4.79 6.2A13.87 13.87 0 0 1 1.67 2.92 5.12 5.12 0 0 0 3.2 9.67a4.82 4.82 0 0 1-2.23-.64v.07c0 2.44 1.7 4.48 3.95 4.95a4.84 4.84 0 0 1-2.22.08c.63 2.01 2.45 3.47 4.6 3.51A9.72 9.72 0 0 1 0 19.74 13.68 13.68 0 0 0 7.55 22c9.06 0 14-7.7 14-14.37v-.65c.96-.71 1.79-1.6 2.45-2.61z" />
-  </svg>
-);
-
-const Instagram = ({ size = 22 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.41 1.41 0 0 1 0-2.8z" />
-  </svg>
-);
-
-const Linkedin = ({ size = 22 }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z" />
-  </svg>
-);
