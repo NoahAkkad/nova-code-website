@@ -1,14 +1,20 @@
 const BASE_URL = "https://novacode.se";
 
-const routes = ["/", "/about", "/services", "/products", "/contact"] as const;
+const routes = [
+  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/about", changefreq: "weekly", priority: "0.8" },
+  { path: "/services", changefreq: "weekly", priority: "0.8" },
+  { path: "/products", changefreq: "weekly", priority: "0.8" },
+  { path: "/contact", changefreq: "weekly", priority: "0.8" },
+] as const;
 
 function buildSitemap(): string {
   const urls = routes
     .map(
-      (path) => `  <url>
+      ({ path, changefreq, priority }) => `  <url>
     <loc>${BASE_URL}${path}</loc>
-    <changefreq>${path === "/" ? "weekly" : "monthly"}</changefreq>
-    <priority>${path === "/" ? "1.0" : "0.8"}</priority>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
   </url>`
     )
     .join("\n");
@@ -25,7 +31,7 @@ export function GET() {
   return new Response(body, {
     status: 200,
     headers: {
-      "Content-Type": "application/xml; charset=utf-8",
+      "Content-Type": "application/xml",
     },
   });
 }
