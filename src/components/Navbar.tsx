@@ -15,10 +15,10 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/85 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur">
       <Container className="flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 p-2 font-semibold">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[rgba(212,175,55,0.7)] bg-[rgba(212,175,55,0.08)] p-2 font-semibold shadow-[0_0_20px_rgba(212,175,55,0.15)]">
             NC
           </div>
           <div className="leading-tight">
@@ -29,7 +29,7 @@ export const Navbar = () => {
 
         <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] md:flex">
           {links.map((item) => (
-            <Link key={item.href} href={item.href} className="text-white/80 transition hover:text-white">
+            <Link key={item.href} href={item.href} className="text-white/80 transition hover:text-[var(--accent-gold)]">
               {item.label}
             </Link>
           ))}

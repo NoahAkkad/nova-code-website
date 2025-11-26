@@ -14,9 +14,9 @@ export default function ServicesPage() {
   return (
     <div className="bg-black text-white">
       <section className="section-shell border-b border-white/10">
-        <Container className="space-y-4">
+        <Container className="space-y-4 reveal" data-animate="fade">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Services</p>
-          <h1 className="text-4xl font-semibold">Services</h1>
+          <h1 className="heading-accent text-4xl font-semibold">Services</h1>
           <p className="max-w-3xl text-lg text-secondary">
             End-to-end teams that design, build, and support modern digital products with clarity and speed.
           </p>
@@ -24,9 +24,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="section-shell">
-        <Container className="grid gap-4 md:grid-cols-2">
+        <Container className="reveal grid gap-4 md:grid-cols-2" data-animate="fade">
           {services.map((service) => (
-            <div key={service} className="card-surface p-5">
+            <div key={service} className="card-surface reveal p-5" data-animate="fade">
               <p className="text-lg font-semibold">{service}</p>
               <p className="mt-2 text-secondary">
                 Tailored engagements with precise roadmaps, transparent communication, and measurable delivery.

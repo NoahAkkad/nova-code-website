@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-black text-white antialiased`}>
+        <ScrollReveal />
         <Navbar />
         <main>{children}</main>
         <Footer />
