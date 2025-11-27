@@ -56,17 +56,40 @@ export function ContactForm() {
     return nextErrors;
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setStatus("idle");
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
-      event.preventDefault();
-      setStatus("error");
       return;
     }
 
-    setStatus("success");
+    try {
+      const response = await fetch("https://formspree.io/f/movovypk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setValues({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setErrors({});
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+    }
   };
 
   return (
@@ -180,7 +203,7 @@ export function ContactForm() {
         )}
         {status === "error" && (
           <p className="text-sm text-[var(--accent-gold)]">
-            Please fix the highlighted fields or email us directly.
+            Something went wrong. Please try again.
           </p>
         )}
       </div>
