@@ -6,6 +6,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { I18nProvider } from "@/i18n/I18nProvider";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -86,64 +87,66 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
-        <ScrollReveal />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <I18nProvider>
+          <ScrollReveal />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
 
-        <Script id="ld-json-organization" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Nova Code AB",
-            url: "https://novacode.se",
-            logo: "/img/logo.svg",
-            address: "Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden",
-            sameAs: [
-              "https://novacode.se",
-              "https://www.linkedin.com/company/nova-code-ab/",
-            ],
-          })}
-        </Script>
-        <Script id="ld-json-website" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            url: "https://novacode.se",
-            name: "Nova Code AB",
-            sameAs: [
-              "https://novacode.se",
-              "https://www.linkedin.com/company/nova-code-ab/",
-            ],
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://novacode.se/?s={search_term_string}",
-              "query-input": "required name=search_term_string",
-            },
-          })}
-        </Script>
-        <Script id="ld-json-localbusiness" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Nova Code AB",
-            image: "https://novacode.se/img/logo.svg",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Grevegårdsvägen 152",
-              postalCode: "421 61",
-              addressLocality: "Västra Frölunda",
-              addressRegion: "Göteborg",
-              addressCountry: "Sweden",
-            },
-            url: "https://novacode.se",
-            telephone: "+46 736 156 631",
-            sameAs: [
-              "https://novacode.se",
-              "https://www.linkedin.com/company/nova-code-ab/",
-            ],
-          })}
-        </Script>
+          <Script id="ld-json-organization" type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Nova Code AB",
+              url: "https://novacode.se",
+              logo: "/img/logo.svg",
+              address: "Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden",
+              sameAs: [
+                "https://novacode.se",
+                "https://www.linkedin.com/company/nova-code-ab/",
+              ],
+            })}
+          </Script>
+          <Script id="ld-json-website" type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: "https://novacode.se",
+              name: "Nova Code AB",
+              sameAs: [
+                "https://novacode.se",
+                "https://www.linkedin.com/company/nova-code-ab/",
+              ],
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://novacode.se/?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            })}
+          </Script>
+          <Script id="ld-json-localbusiness" type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Nova Code AB",
+              image: "https://novacode.se/img/logo.svg",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Grevegårdsvägen 152",
+                postalCode: "421 61",
+                addressLocality: "Västra Frölunda",
+                addressRegion: "Göteborg",
+                addressCountry: "Sweden",
+              },
+              url: "https://novacode.se",
+              telephone: "+46 736 156 631",
+              sameAs: [
+                "https://novacode.se",
+                "https://www.linkedin.com/company/nova-code-ab/",
+              ],
+            })}
+          </Script>
+        </I18nProvider>
       </body>
     </html>
   );

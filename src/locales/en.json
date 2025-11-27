@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "contact": "Contact",
+    "tagline": "Premium software company",
+    "language": {
+      "en": "EN",
+      "sv": "SV"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "We Build Smart Digital Products",
+      "subtitle": "Software Development | Mobile Apps | Digital Solutions",
+      "description": "Software development Sweden specialists delivering mobile app development in Göteborg, SaaS platforms, and custom software solutions that keep your business performing fast.",
+      "ctaPrimary": "Explore Our Work",
+      "ctaSecondary": "Book a call",
+      "highlights": {
+        "heading": "Highlights",
+        "founded": "Founded",
+        "foundedValue": "2025",
+        "location": "Location",
+        "locationValue": "Gothenburg, Sweden",
+        "focus": "Focus",
+        "focusValue": "Digital Products",
+        "team": "Team",
+        "teamValue": "Design & Engineering"
+      }
+    },
+    "aboutPreview": {
+      "eyebrow": "About Preview",
+      "title": "Who we are",
+      "paragraphOne": "Nova Code AB is a Swedish software development company specializing in modern, scalable, and user-centered digital products. We build mobile apps, web applications, SaaS platforms, and custom software solutions with teams based in Göteborg.",
+      "paragraphTwo": "Learn more about our story, team, and approach to mobile app development in Göteborg on the dedicated About page.",
+      "cta": "About Nova Code AB"
+    },
+    "servicePreview": {
+      "items": [
+        "Mobile App Development",
+        "Web Applications & SaaS",
+        "Custom Software Solutions"
+      ],
+      "description": "Sharp execution, transparent delivery, and products built for growth.",
+      "cta": "View all services"
+    },
+    "featuredProduct": {
+      "eyebrow": "Featured Product",
+      "title": "Nova Play — Mobile Gaming Application",
+      "description": "Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences for Android users in Sweden and beyond.",
+      "bullets": [
+        "Immersive, high-performance mobile experience.",
+        "Reward mechanisms that keep players engaged.",
+        "Built with scalable cloud-first infrastructure."
+      ],
+      "cta": "Download on Google Play"
+    },
+    "promise": {
+      "title": "Our promise",
+      "description": "We design and engineer every Nova Code AB product to feel premium: minimalistic visuals, precise motion, and resilient technology layers that scale with your audience."
+    },
+    "reviews": {
+      "eyebrow": "App Reviews",
+      "title": "What Our Users Say",
+      "description": "Users around the world enjoy Nova Play for its fun experience, smooth performance, and rewarding system. Here are some of the latest reviews from our community.",
+      "items": [
+        {
+          "text": "Amazing app! Smooth experience and really fun to use.",
+          "user": "– Sarah J."
+        },
+        {
+          "text": "Nova Play is definitely one of the best reward apps I’ve tried. Highly recommended!",
+          "user": "– David M."
+        },
+        {
+          "text": "Great design, easy to use, and the rewards actually work.",
+          "user": "– Lina R."
+        },
+        {
+          "text": "I love the interface and the performance. Very enjoyable experience!",
+          "user": "– Alex P."
+        }
+      ],
+      "cta": "See More Reviews on Google Play"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About Nova Code AB",
+    "intro": "Nova Code AB is a Swedish software development company focused on building high-performance digital products. Founded in 2025, our mission is to deliver innovative, user-focused solutions using modern technologies.",
+    "location": "Location: Gothenburg, Sweden",
+    "body": "As a Göteborg tech company, we specialize in mobile app development, SaaS development in Sweden, and custom software solutions that align design, engineering, and product strategy for growing teams.",
+    "mission": {
+      "title": "Mission",
+      "description": "To craft smart, scalable, and user-centered software that unlocks new growth for businesses and creates meaningful experiences for their customers."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be recognized as the premium Swedish software company known for modern engineering, precise design, and reliable delivery."
+    },
+    "values": {
+      "title": "Values",
+      "items": ["Innovation", "Quality", "Scalability", "Transparency"]
+    }
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Services",
+    "intro": "End-to-end teams that design, build, and support modern digital products with clarity and speed. We lead software development Sweden projects with battle-tested engineering, product strategy, and secure delivery.",
+    "items": [
+      {
+        "title": "Mobile App Development (Android/iOS)",
+        "description": "We build high-performance mobile applications tailored to your business goals. Our team designs and develops scalable Android and iOS apps with seamless UX, modern architecture, and reliable backend integrations. From concept to launch, we deliver mobile products that are fast, secure, and user-focused."
+      },
+      {
+        "title": "Web Applications & SaaS Platforms",
+        "description": "We create robust, cloud-ready web applications and custom SaaS platforms. Our solutions are designed for scalability, security, and long-term maintainability, ensuring your business can grow without limitations. We handle everything from UI/UX to API development and cloud deployment."
+      },
+      {
+        "title": "Custom Software Development",
+        "description": "We develop fully customized software solutions built around your specific workflows, challenges, and strategic goals. Whether you need internal tools, automation systems, or end-to-end digital platforms, we deliver precise, scalable software designed to improve performance and efficiency."
+      },
+      {
+        "title": "UI/UX Design & Prototyping",
+        "description": "We create clean, intuitive, and user-centered digital experiences. Our design process includes research, wireframing, prototyping, and high-fidelity UI design tailored to your brand. The result: interfaces that look great, feel natural, and improve user engagement."
+      },
+      {
+        "title": "Backend Development & API Systems",
+        "description": "We build secure, efficient backend systems and scalable APIs to power your applications. Our team specializes in Node.js, .NET, cloud-native architecture, microservices, and database optimization. We ensure your backend is fast, stable, and ready for high-traffic workloads."
+      },
+      {
+        "title": "Cloud Solutions (AWS, Azure)",
+        "description": "We deliver cloud solutions that enhance reliability, reduce costs, and scale with demand. Our services include cloud migration, DevOps automation, CI/CD pipelines, serverless functions, and infrastructure setup on AWS or Azure. We help you achieve high availability and performance with modern cloud architecture."
+      }
+    ],
+    "cta": {
+      "title": "Plan your next release with us",
+      "description": "Whether you need an app development company to ship a new Android build or a partner to modernize SaaS infrastructure, Nova Code AB aligns to your roadmap and keeps every stakeholder informed.",
+      "button": "Talk to our team"
+    }
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Nova Play — Mobile Gaming Application",
+    "intro": "Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences.",
+    "body": "Built by our app development company in Sweden, Nova Play combines mobile gaming, SaaS-backed infrastructure, and custom software solutions to ensure reliable performance at scale.",
+    "cta": "Download on Google Play",
+    "features": {
+      "title": "Features",
+      "items": [
+        "Reward-based gameplay loops",
+        "Real-time performance tuned for mobile",
+        "Secure user profiles and progress sync",
+        "Cloud-native infrastructure for scale"
+      ]
+    },
+    "technology": {
+      "title": "Technology",
+      "items": ["React Native", "TypeScript", "Node.js APIs", "Cloud services on AWS/Azure"]
+    },
+    "reviews": {
+      "title": "Hear from our users",
+      "description": "Explore the latest community feedback and see why players love Nova Play.",
+      "cta": "View App Reviews"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "intro": "Tell us about your next product or feature. We reply to every message within two business days.",
+    "details": {
+      "title": "Contact details",
+      "company": "Company Name: Nova Code AB",
+      "location": "Location: Gothenburg, Sweden",
+      "phoneLabel": "Phone:",
+      "emailLabel": "Email:",
+      "description": "Our Göteborg tech company helps businesses across Sweden with mobile app development, SaaS development, and custom software solutions tailored to their market."
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your email",
+      "subjectPlaceholder": "Project subject",
+      "messagePlaceholder": "Tell us about your goals",
+      "submit": "Submit"
+    }
+  },
+  "footer": {
+    "description": "Swedish software development company delivering premium, modern, and scalable digital products for ambitious teams.",
+    "contact": "Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden · Phone: +46 736 156 631 · Email: info@novacode.se",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "follow": "Follow",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 Nova Code AB. All rights reserved."
+  }
+}
