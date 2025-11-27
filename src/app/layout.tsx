@@ -6,6 +6,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { I18nProvider } from "@/components/I18nProvider";
+import { getDictionary, normalizeLocale, type Locale } from "@/locales";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -15,49 +17,9 @@ const googleSiteVerification =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://novacode.se"),
-  title: "Nova Code AB | Smart Digital Product Studio in Göteborg",
+  title: "Nova Code AB",
   description:
-    "Nova Code AB is a Göteborg tech company delivering software development, mobile apps, SaaS, and custom digital products for teams across Sweden.",
-  keywords: [
-    "nova code ab",
-    "software development",
-    "mobile apps",
-    "SaaS",
-    "web development",
-    "Göteborg tech company",
-    "app development Sweden",
-    "Software development Sweden",
-    "Mobile app development Göteborg",
-  ],
-  authors: [{ name: "Nova Code AB" }],
-  alternates: {
-    canonical: "https://novacode.se",
-  },
-  openGraph: {
-    title: "Nova Code AB | Smart Digital Product Studio in Göteborg",
-    description:
-      "Swedish experts in software development, mobile app development, SaaS engineering, and custom software solutions headquartered in Göteborg.",
-    url: "https://novacode.se",
-    type: "website",
-    locale: "en_US",
-    siteName: "Nova Code AB",
-    images: [
-      {
-        url: "/img/hero.png",
-        width: 1200,
-        height: 630,
-        alt: "Nova Code AB software development hero",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nova Code AB | Smart Digital Product Studio",
-    description:
-      "Nova Code AB crafts premium mobile apps, web platforms, and SaaS products for businesses across Sweden and beyond.",
-    images: ["/img/hero.png"],
-    creator: "@novacodeab",
-  },
+    "Nova Code AB builds premium digital products including software development, mobile apps, and SaaS solutions in Sweden.",
 };
 
 export const viewport: Viewport = {
@@ -66,13 +28,18 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale?: Locale };
 }>) {
+  const locale = normalizeLocale(params?.locale);
+  const dictionary = getDictionary(locale);
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <link rel="preload" href="/img/logo.svg" as="image" />
         <meta name="author" content="Nova Code AB" />
@@ -87,9 +54,11 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
         <ScrollReveal />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <I18nProvider locale={locale} dictionary={dictionary}>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </I18nProvider>
 
         <Script id="ld-json-organization" type="application/ld+json">
           {JSON.stringify({

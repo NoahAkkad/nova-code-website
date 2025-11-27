@@ -1,0 +1,213 @@
+{
+  "locale": "sv",
+  "nav": {
+    "brand": "Nova Code AB",
+    "tagline": "Premium mjukvarubolag",
+    "home": "Hem",
+    "about": "Om oss",
+    "services": "Tjänster",
+    "products": "Produkter",
+    "contact": "Kontakt",
+    "language": "Språk",
+    "en": "EN",
+    "sv": "SV"
+  },
+  "footer": {
+    "description": "Svenskt mjukvaruföretag som levererar premium, moderna och skalbara digitala produkter för ambitiösa team.",
+    "contact": "Plats: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sverige · Telefon: +46 736 156 631 · E-post: info@novacode.se",
+    "quickLinks": "Snabblänkar",
+    "legal": "Juridiskt",
+    "follow": "Följ oss",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "linkedIn": "LinkedIn",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "copyright": "© 2025 Nova Code AB. Alla rättigheter förbehållna."
+  },
+  "common": {
+    "buttons": {
+      "explore": "Utforska vårt arbete",
+      "bookCall": "Boka ett möte",
+      "viewServices": "Visa alla tjänster",
+      "download": "Ladda ner på Google Play",
+      "seeMoreReviews": "Se fler recensioner på Google Play",
+      "talkToTeam": "Prata med vårt team",
+      "viewReviews": "Visa apprecensioner",
+      "submit": "Skicka"
+    },
+    "labels": {
+      "highlights": "Höjdpunkter",
+      "founded": "Grundat",
+      "location": "Plats",
+      "focus": "Fokus",
+      "team": "Team",
+      "aboutPreview": "Om oss i korthet",
+      "featuredProduct": "Utvald produkt",
+      "appReviews": "Apprecensioner",
+      "services": "Tjänster",
+      "contact": "Kontakt",
+      "contactDetails": "Kontaktuppgifter"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Nova Code AB | Programvaruutveckling, mobilappar och SaaS i Sverige",
+      "description": "Upptäck Nova Code AB i Göteborg: experter på programvaruutveckling som skapar mobilappar, SaaS-plattformar och skräddarsydda digitala lösningar som hjälper team att skala."
+    },
+    "about": {
+      "title": "Om Nova Code AB | Göteborgsbyrå för programvaruutveckling",
+      "description": "Lär känna Nova Code AB i Göteborg, Sverige—specialister på programvaruutveckling som bygger mobilappar, SaaS-plattformar och skräddarsydda mjukvarulösningar."
+    },
+    "services": {
+      "title": "Tjänster | Nova Code AB för mjukvaru- och apputveckling",
+      "description": "Utforska Nova Code AB:s tjänster: programvaruutveckling, mobilapputveckling i Göteborg, SaaS-utveckling i Sverige, molnarkitektur och UI/UX-design."
+    },
+    "products": {
+      "title": "Nova Play | Produkter | Nova Code AB:s mobilspelsapp",
+      "description": "Upptäck Nova Play från Nova Code AB—en Android-baserad spel- och belöningsapp byggd i Sverige med molnprestanda och engagerande spelupplevelse."
+    },
+    "contact": {
+      "title": "Kontakta Nova Code AB | Programvaru- och apputveckling i Sverige",
+      "description": "Kontakta Nova Code AB för programvaruutveckling, mobilapputveckling, SaaS-projekt och skräddarsydda mjukvarulösningar från vårt kontor i Göteborg."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Vi bygger smarta digitala produkter",
+      "subtitle": "Programvaruutveckling | Mobilappar | Digitala lösningar",
+      "description": "Specialister på programvaruutveckling i Sverige som levererar mobilapputveckling i Göteborg, SaaS-plattformar och skräddarsydda mjukvarulösningar som håller ditt företag snabbt och konkurrenskraftigt.",
+      "highlights": {
+        "founded": "2025",
+        "location": "Göteborg, Sverige",
+        "focus": "Digitala produkter",
+        "team": "Design & Engineering"
+      }
+    },
+    "aboutPreview": {
+      "title": "Vilka vi är",
+      "description1": "Nova Code AB är ett svenskt mjukvaruföretag som specialiserar sig på moderna, skalbara och användarcentrerade digitala produkter. Vi bygger mobilappar, webbapplikationer, SaaS-plattformar och skräddarsydda mjukvarulösningar med team baserade i Göteborg.",
+      "description2": "Läs mer om vår resa, vårt team och vårt arbetssätt för mobilapputveckling i Göteborg på sidan Om oss.",
+      "button": "Om Nova Code AB",
+      "services": [
+        "Mobilapputveckling",
+        "Webbapplikationer och SaaS",
+        "Skräddarsydda mjukvarulösningar"
+      ],
+      "serviceDescription": "Precision i leveransen, transparens i samarbetet och produkter byggda för tillväxt."
+    },
+    "product": {
+      "title": "Nova Play — mobil spelapplikation",
+      "description": "Nova Play är vår flaggskeppsplattform för mobilspel, skapad för att leverera roliga, interaktiva och belönande upplevelser för Android-användare i Sverige och internationellt.",
+      "bullets": [
+        "Immersiv, högpresterande mobilupplevelse.",
+        "Belöningsmekanismer som håller spelare engagerade.",
+        "Byggd med skalbar molninfrastruktur."
+      ],
+      "promiseTitle": "Vårt löfte",
+      "promiseBody": "Vi designar och utvecklar varje produkt från Nova Code AB för att kännas premium: minimalistisk design, precisa rörelser och robusta tekniklager som skalar med din publik."
+    },
+    "reviews": {
+      "title": "Vad våra användare säger",
+      "description": "Användare runt om i världen uppskattar Nova Play för den roliga upplevelsen, den smidiga prestandan och belöningssystemet. Här är några av de senaste omdömena från vår community.",
+      "items": [
+        {
+          "text": "Fantastisk app! Smidigt flöde och riktigt rolig att använda.",
+          "user": "– Sarah J."
+        },
+        {
+          "text": "Nova Play är definitivt en av de bästa belöningsapparna jag har provat. Rekommenderas varmt!",
+          "user": "– David M."
+        },
+        {
+          "text": "Snygg design, enkel att använda och belöningarna fungerar verkligen.",
+          "user": "– Lina R."
+        },
+        {
+          "text": "Jag älskar gränssnittet och prestandan. En riktigt trevlig upplevelse!",
+          "user": "– Alex P."
+        }
+      ]
+    }
+  },
+  "aboutPage": {
+    "intro": "Nova Code AB är ett svenskt mjukvaruföretag med fokus på högpresterande digitala produkter. Grundat 2025 med uppdraget att leverera innovativa, användarfokuserade lösningar med moderna tekniker.",
+    "location": "Plats: Göteborg, Sverige",
+    "body": "Som ett göteborgsbaserat techbolag specialiserar vi oss på mobilapputveckling, SaaS-utveckling i Sverige och skräddarsydda mjukvarulösningar som förenar design, engineering och produktstrategi för växande team.",
+    "missionTitle": "Mission",
+    "mission": "Att skapa smart, skalbar och användarcentrerad mjukvara som öppnar nya möjligheter för företag och ger meningsfulla upplevelser för deras kunder.",
+    "visionTitle": "Vision",
+    "vision": "Att bli erkända som det främsta svenska mjukvarubolaget känt för modern engineering, precis design och trygg leverans.",
+    "valuesTitle": "Värderingar",
+    "values": ["Innovation", "Kvalitet", "Skalbarhet", "Transparens"]
+  },
+  "servicesPage": {
+    "intro": "Tvärfunktionella team som designar, bygger och stödjer moderna digitala produkter med tydlighet och tempo. Vi leder projekt inom programvaruutveckling i Sverige med beprövad engineering, produktstrategi och säker leverans.",
+    "services": [
+      {
+        "title": "Mobilapputveckling (Android/iOS)",
+        "description": "Vi bygger högpresterande mobilappar anpassade efter dina affärsmål. Teamet designar och utvecklar skalbara Android- och iOS-appar med sömlös UX, modern arkitektur och pålitliga backend-integrationer. Från idé till lansering levererar vi mobilprodukter som är snabba, säkra och användarcentrerade."
+      },
+      {
+        "title": "Webbapplikationer och SaaS-plattformar",
+        "description": "Vi skapar robusta, molnredo webbapplikationer och skräddarsydda SaaS-plattformar. Lösningarna byggs för skalbarhet, säkerhet och långsiktig förvaltningsbarhet så att verksamheten kan växa utan hinder. Vi tar hand om allt från UI/UX till API-utveckling och molnleverans."
+      },
+      {
+        "title": "Skräddarsydd mjukvaruutveckling",
+        "description": "Vi utvecklar helt anpassade mjukvarulösningar runt dina arbetsflöden, utmaningar och strategiska mål. Oavsett om du behöver interna verktyg, automationssystem eller heltäckande digitala plattformar levererar vi precis och skalbar mjukvara som förbättrar prestanda och effektivitet."
+      },
+      {
+        "title": "UI/UX-design och prototyper",
+        "description": "Vi skapar rena, intuitiva och användarcentrerade digitala upplevelser. Designprocessen omfattar research, wireframes, prototyper och högupplöst UI designat för ditt varumärke. Resultatet är gränssnitt som ser bra ut, känns naturliga och ökar engagemanget."
+      },
+      {
+        "title": "Backend-utveckling och API-system",
+        "description": "Vi bygger säkra, effektiva backend-system och skalbara API:er som driver dina applikationer. Teamet är specialiserat på Node.js, .NET, molnnativ arkitektur, mikrotjänster och databasutveckling. Vi säkerställer att din backend är snabb, stabil och redo för hög trafik."
+      },
+      {
+        "title": "Molnlösningar (AWS, Azure)",
+        "description": "Vi levererar molnlösningar som förbättrar driftsäkerheten, minskar kostnader och skalar med efterfrågan. Tjänsterna inkluderar molnmigrering, DevOps-automatisering, CI/CD-pipelines, serverlösa funktioner och infrastruktur på AWS eller Azure. Vi hjälper dig nå hög tillgänglighet och prestanda med modern molnarkitektur."
+      }
+    ],
+    "ctaTitle": "Planera nästa release med oss",
+    "ctaDescription": "Oavsett om du behöver ett appteam som släpper en ny Android-version eller en partner som moderniserar SaaS-infrastruktur, anpassar sig Nova Code AB efter din roadmap och håller alla intressenter uppdaterade."
+  },
+  "productsPage": {
+    "intro": "Nova Play är vår flaggskeppsplattform för mobilspel som levererar roliga, interaktiva och belönande upplevelser.",
+    "description": "Utvecklad av vårt appteam i Sverige kombinerar Nova Play mobilspel, SaaS-stödd infrastruktur och skräddarsydd mjukvara för att säkerställa pålitlig prestanda i stor skala.",
+    "featuresTitle": "Funktioner",
+    "features": [
+      "Belönande spelupplevelser",
+      "Prestanda optimerad för mobil i realtid",
+      "Säkra användarprofiler och synkroniserade framsteg",
+      "Molnbaserad infrastruktur som skalar"
+    ],
+    "technologyTitle": "Teknik",
+    "technology": [
+      "React Native",
+      "TypeScript",
+      "Node.js-API:er",
+      "Molntjänster på AWS/Azure"
+    ],
+    "hearFromUsers": "Hör vad våra användare tycker",
+    "hearFromUsersDescription": "Utforska den senaste feedbacken och se varför spelare älskar Nova Play."
+  },
+  "contactPage": {
+    "intro": "Berätta om nästa produkt eller funktion. Vi svarar på varje meddelande inom två arbetsdagar.",
+    "details": "Vårt göteborgsbaserade techbolag hjälper företag över hela Sverige med mobilapputveckling, SaaS-utveckling och skräddarsydda mjukvarulösningar anpassade till deras marknad.",
+    "companyName": "Företagsnamn",
+    "location": "Plats",
+    "phone": "Telefon",
+    "email": "E-post",
+    "form": {
+      "nameLabel": "Namn",
+      "namePlaceholder": "Ditt namn",
+      "emailLabel": "E-post",
+      "emailPlaceholder": "Din e-post",
+      "subjectLabel": "Ämne",
+      "subjectPlaceholder": "Projektämne",
+      "messageLabel": "Meddelande",
+      "messagePlaceholder": "Berätta om dina mål"
+    }
+  }
+}

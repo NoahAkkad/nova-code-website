@@ -2,10 +2,15 @@ const BASE_URL = "https://novacode.se";
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/sv", changefreq: "weekly", priority: "1.0" },
   { path: "/about", changefreq: "weekly", priority: "0.8" },
+  { path: "/sv/about", changefreq: "weekly", priority: "0.8" },
   { path: "/services", changefreq: "weekly", priority: "0.8" },
+  { path: "/sv/services", changefreq: "weekly", priority: "0.8" },
   { path: "/products", changefreq: "weekly", priority: "0.8" },
+  { path: "/sv/products", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "weekly", priority: "0.8" },
+  { path: "/sv/contact", changefreq: "weekly", priority: "0.8" },
 ] as const;
 
 function buildSitemap(): string {
