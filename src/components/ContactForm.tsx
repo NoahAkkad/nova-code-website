@@ -57,21 +57,27 @@ export function ContactForm() {
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
     setStatus("idle");
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
+      event.preventDefault();
       setStatus("error");
       return;
     }
 
     setStatus("success");
-    setValues({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+    <form
+      className="space-y-4"
+      action="https://formspree.io/f/movovypk"
+      method="POST"
+      onSubmit={handleSubmit}
+      noValidate
+    >
+      <input type="hidden" name="_subject" value="New message from Nova Code website" />
       <div>
         <label className="block text-sm font-semibold text-white" htmlFor="contact-name">
           Name
