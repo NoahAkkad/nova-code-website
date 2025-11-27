@@ -27,7 +27,10 @@ export const Navbar = () => {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] md:flex">
+        <nav
+          className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] md:flex"
+          aria-label="Primary navigation"
+        >
           {links.map((item) => (
             <Link key={item.href} href={item.href} className="text-white/80 transition hover:text-[var(--accent-gold)]">
               {item.label}
@@ -40,6 +43,9 @@ export const Navbar = () => {
             onClick={() => setOpen((prev) => !prev)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white"
             aria-label="Toggle navigation"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            type="button"
           >
             <span className="sr-only">Toggle navigation</span>
             <div className="space-y-1.5">
@@ -52,7 +58,7 @@ export const Navbar = () => {
       </Container>
 
       {open && (
-        <div className="border-t border-white/10 bg-black/95 md:hidden">
+        <div className="border-t border-white/10 bg-black/95 md:hidden" id="mobile-menu">
           <Container className="flex flex-col gap-2 py-4">
             {links.map((item) => (
               <Link

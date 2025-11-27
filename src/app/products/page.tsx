@@ -1,36 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+
 import { Container } from "@/components/Container";
+import { keywords, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Nova Play | Products | Nova Code AB Mobile Gaming App",
   description:
     "Discover Nova Play by Nova Code AB—an Android mobile gaming and reward app built in Sweden with cloud-native performance and engaging gameplay.",
-  keywords: [
-    "nova code ab",
-    "mobile apps",
-    "Nova Play app",
-    "mobile gaming",
-    "reward app",
-    "Android game",
-    "Google Play app",
-    "app development Sweden",
-    "Mobile app development Göteborg",
-  ],
+  keywords,
   authors: [{ name: "Nova Code AB" }],
   alternates: {
-    canonical: "https://novacode.se/products",
+    canonical: `${siteConfig.domain}/products`,
   },
   openGraph: {
     title: "Nova Play | Nova Code AB Mobile Gaming App",
     description:
       "Play Nova Play—our flagship Android reward app built by Nova Code AB for immersive mobile gaming audiences in Sweden and worldwide.",
-    url: "https://novacode.se/products",
+    url: `${siteConfig.domain}/products`,
     type: "website",
     images: [
       {
-        url: "/img/hero.png",
+        url: siteConfig.ogImagePath,
         width: 1200,
         height: 630,
         alt: "Nova Play mobile gaming app preview",
@@ -42,7 +34,7 @@ export const metadata: Metadata = {
     title: "Nova Play | Nova Code AB Mobile Gaming App",
     description:
       "Nova Play is the mobile gaming and reward app from Nova Code AB, available now on Google Play for Android players.",
-    images: ["/img/hero.png"],
+    images: [siteConfig.ogImagePath],
     creator: "@novacodeab",
   },
 };
@@ -134,18 +126,15 @@ export default function ProductsPage() {
           name: "Nova Play",
           brand: {
             "@type": "Organization",
-            name: "Nova Code AB",
-            url: "https://novacode.se",
-            logo: "https://novacode.se/img/logo.svg",
-            sameAs: [
-              "https://novacode.se",
-              "https://www.linkedin.com/company/nova-code-ab/",
-            ],
+            name: siteConfig.name,
+            url: siteConfig.domain,
+            logo: `${siteConfig.domain}${siteConfig.logoPath}`,
+            sameAs: [siteConfig.domain, siteConfig.social.linkedin],
           },
           description:
             "Nova Play is a mobile gaming and reward app for Android built by Nova Code AB in Sweden, delivering immersive gameplay and reliable cloud performance.",
-          image: "https://novacode.se/img/hero.png",
-          url: "https://novacode.se/products",
+          image: `${siteConfig.domain}${siteConfig.ogImagePath}`,
+          url: `${siteConfig.domain}/products`,
           category: "MobileApplication",
           operatingSystem: "Android",
           offers: {
