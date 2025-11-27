@@ -58,7 +58,7 @@ export function Footer() {
               <Link href="https://www.twitter.com" className="link-underline-gold transition hover:text-white">
                 Twitter
               </Link>
-              <Link href="https://www.instagram.com" className="link-underline-gold transition hover:text-white">
+              <Link href="https://www.instagram.com/novacodeab/" className="link-underline-gold transition hover:text-white">
                 Instagram
               </Link>
             </div>
