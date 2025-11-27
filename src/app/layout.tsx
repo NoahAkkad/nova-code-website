@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { Footer } from "@/components/Footer";
@@ -9,8 +8,6 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Translation } from "@/components/Translation";
 import { keywords, siteConfig } from "@/config/site";
 import { I18nProvider } from "@/context/I18nContext";
-
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
@@ -77,7 +74,7 @@ export default function RootLayout({
           content={googleSiteVerification}
         />
       </head>
-      <body className={`${inter.className} bg-black text-white antialiased`}>
+      <body className="bg-black font-sans text-white antialiased">
         <I18nProvider>
           <a className="skip-link" href="#main-content">
             <Translation i18nKey="common.skipToContent" />
