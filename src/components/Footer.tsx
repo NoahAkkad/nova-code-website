@@ -1,17 +1,18 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { Translation } from "@/components/Translation";
 
 const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Contact", href: "/contact" },
+  { labelKey: "common.nav.home", href: "/" },
+  { labelKey: "common.nav.about", href: "/about" },
+  { labelKey: "common.nav.services", href: "/services" },
+  { labelKey: "common.nav.products", href: "/products" },
+  { labelKey: "common.nav.contact", href: "/contact" },
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
+  { labelKey: "common.footer.privacy", href: "#" },
+  { labelKey: "common.footer.terms", href: "#" },
 ];
 
 const socialUrls = {
@@ -57,36 +58,41 @@ export function Footer() {
         <div className="max-w-xl space-y-3">
           <h3 className="text-lg font-semibold">Nova Code AB</h3>
           <p className="text-secondary">
-            Swedish software development company delivering premium, modern, and scalable digital products for ambitious teams.
+            <Translation i18nKey="common.footer.description" />
           </p>
           <p className="text-secondary">
-            Location: Grevegårdsvägen 152, 421 61 Västra Frölunda, Göteborg, Sweden · Phone: +46 736 156 631 · Email:
-            info@novacode.se
+            <Translation i18nKey="common.footer.contactLine" />
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           <div>
-            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Quick Links</p>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="common.footer.quickLinks" />
+            </p>
             <div className="flex flex-col gap-2 text-secondary">
               {quickLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="link-underline-gold transition hover:text-white">
-                  {item.label}
+                <Link key={item.labelKey} href={item.href} className="link-underline-gold transition hover:text-white">
+                  <Translation i18nKey={item.labelKey} />
                 </Link>
               ))}
             </div>
           </div>
           <div>
-            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Legal</p>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="common.footer.legal" />
+            </p>
             <div className="flex flex-col gap-2 text-secondary">
               {legalLinks.map((item) => (
-                <Link key={item.label} href={item.href} className="link-underline-gold transition hover:text-white">
-                  {item.label}
+                <Link key={item.labelKey} href={item.href} className="link-underline-gold transition hover:text-white">
+                  <Translation i18nKey={item.labelKey} />
                 </Link>
               ))}
             </div>
           </div>
           <div>
-            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Follow</p>
+            <p className="pb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="common.footer.follow" />
+            </p>
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               {socialLinks.map(({ label, ariaLabel, href, Icon }) => (
                 <Link
@@ -105,11 +111,13 @@ export function Footer() {
       </Container>
       <div className="mt-10 border-t border-white/10 pt-6">
         <Container className="flex flex-col gap-2 text-secondary sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-white">© 2025 Nova Code AB. All rights reserved.</p>
+          <p className="text-white">
+            <Translation i18nKey="common.footer.rights" />
+          </p>
           <div className="flex gap-4 text-secondary">
             {legalLinks.map((item) => (
-              <Link key={item.label} href={item.href} className="link-underline-gold transition hover:text-white">
-                {item.label}
+              <Link key={item.labelKey} href={item.href} className="link-underline-gold transition hover:text-white">
+                <Translation i18nKey={item.labelKey} />
               </Link>
             ))}
           </div>

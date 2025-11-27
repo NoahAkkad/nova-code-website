@@ -2,17 +2,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Container } from "./Container";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { Translation } from "./Translation";
+import { useI18n } from "@/context/I18nContext";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Contact", href: "/contact" },
+  { key: "common.nav.home", href: "/" },
+  { key: "common.nav.about", href: "/about" },
+  { key: "common.nav.services", href: "/services" },
+  { key: "common.nav.products", href: "/products" },
+  { key: "common.nav.contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/85 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur">
@@ -23,7 +27,9 @@ export const Navbar = () => {
           </div>
           <div className="leading-tight">
             <p className="text-base font-semibold">Nova Code AB</p>
-            <p className="text-xs text-white/70">Premium software company</p>
+            <p className="text-xs text-white/70">
+              <Translation i18nKey="common.brandTagline" />
+            </p>
           </div>
         </Link>
 
@@ -33,21 +39,24 @@ export const Navbar = () => {
         >
           {links.map((item) => (
             <Link key={item.href} href={item.href} className="text-white/80 transition hover:text-[var(--accent-gold)]">
-              {item.label}
+              <Translation i18nKey={item.key} />
             </Link>
           ))}
+          <LanguageSwitcher />
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={() => setOpen((prev) => !prev)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white"
-            aria-label="Toggle navigation"
+            aria-label={t("common.nav.toggle") as string}
             aria-expanded={open}
             aria-controls="mobile-menu"
             type="button"
           >
-            <span className="sr-only">Toggle navigation</span>
+            <span className="sr-only">
+              <Translation i18nKey="common.nav.toggle" />
+            </span>
             <div className="space-y-1.5">
               <span className={`block h-0.5 w-6 bg-white transition ${open ? "translate-y-2 rotate-45" : ""}`} />
               <span className={`block h-0.5 w-6 bg-white transition ${open ? "opacity-0" : ""}`} />
@@ -67,9 +76,12 @@ export const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/80 transition hover:bg-white/5 hover:text-white"
               >
-                {item.label}
+                <Translation i18nKey={item.key} />
               </Link>
             ))}
+            <div className="pt-2">
+              <LanguageSwitcher />
+            </div>
           </Container>
         </div>
       )}

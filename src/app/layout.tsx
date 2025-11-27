@@ -6,7 +6,9 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { Translation } from "@/components/Translation";
 import { keywords, siteConfig } from "@/config/site";
+import { I18nProvider } from "@/context/I18nContext";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -76,13 +78,15 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
-        <a className="skip-link" href="#main-content">
-          Skip to main content
-        </a>
-        <ScrollReveal />
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <I18nProvider>
+          <a className="skip-link" href="#main-content">
+            <Translation i18nKey="common.skipToContent" />
+          </a>
+          <ScrollReveal />
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </I18nProvider>
 
         <Script id="ld-json-organization" type="application/ld+json">
           {JSON.stringify({

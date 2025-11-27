@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/Container";
+import { Translation, TranslatedList } from "@/components/Translation";
 import { keywords, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -38,31 +39,6 @@ export const metadata: Metadata = {
   },
 };
 
-const servicePreview = [
-  "Mobile App Development",
-  "Web Applications & SaaS",
-  "Custom Software Solutions",
-];
-
-const reviews = [
-  {
-    text: "Amazing app! Smooth experience and really fun to use.",
-    user: "– Sarah J.",
-  },
-  {
-    text: "Nova Play is definitely one of the best reward apps I’ve tried. Highly recommended!",
-    user: "– David M.",
-  },
-  {
-    text: "Great design, easy to use, and the rewards actually work.",
-    user: "– Lina R.",
-  },
-  {
-    text: "I love the interface and the performance. Very enjoyable experience!",
-    user: "– Alex P.",
-  },
-];
-
 export default function Home() {
   return (
     <div className="bg-black text-white">
@@ -82,47 +58,64 @@ export default function Home() {
         >
           <div className="space-y-6 lg:w-3/5">
             <h1 className="heading-accent text-4xl font-semibold leading-tight sm:text-5xl">
-              We Build Smart Digital Products
+              <Translation i18nKey="home.hero.title" />
             </h1>
             <p className="max-w-2xl text-lg text-secondary">
-              Software Development | Mobile Apps | Digital Solutions
+              <Translation i18nKey="home.hero.subtitle" />
             </p>
             <p className="max-w-3xl text-secondary">
-              Software development Sweden specialists delivering mobile app development in Göteborg, SaaS platforms, and custom software
-              solutions that keep your business performing fast.
+              <Translation i18nKey="home.hero.description" />
             </p>
             <div className="flex gap-4">
               <Link href="/products" className="button-outline" title="Explore Nova Code AB products">
-                Explore Our Work
+                <Translation i18nKey="home.hero.ctaPrimary" />
               </Link>
               <Link
                 href="/contact"
                 className="link-underline-gold inline-flex items-center text-secondary underline-offset-4 hover:text-white"
                 title="Book a call with Nova Code AB"
               >
-                Book a call
+                <Translation i18nKey="home.hero.ctaSecondary" />
               </Link>
             </div>
           </div>
           <div className="lg:w-2/5">
             <div className="card-surface p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Highlights</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+                <Translation i18nKey="home.highlights.title" />
+              </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="text-sm text-secondary">Founded</p>
-                  <p className="text-xl font-semibold">2025</p>
+                  <p className="text-sm text-secondary">
+                    <Translation i18nKey="home.highlights.foundedLabel" />
+                  </p>
+                  <p className="text-xl font-semibold">
+                    <Translation i18nKey="home.highlights.foundedValue" />
+                  </p>
                 </div>
                 <div>
-                  <p className="text-sm text-secondary">Location</p>
-                  <p className="text-xl font-semibold">Gothenburg, Sweden</p>
+                  <p className="text-sm text-secondary">
+                    <Translation i18nKey="home.highlights.locationLabel" />
+                  </p>
+                  <p className="text-xl font-semibold">
+                    <Translation i18nKey="home.highlights.locationValue" />
+                  </p>
                 </div>
                 <div>
-                  <p className="text-sm text-secondary">Focus</p>
-                  <p className="text-xl font-semibold">Digital Products</p>
+                  <p className="text-sm text-secondary">
+                    <Translation i18nKey="home.highlights.focusLabel" />
+                  </p>
+                  <p className="text-xl font-semibold">
+                    <Translation i18nKey="home.highlights.focusValue" />
+                  </p>
                 </div>
                 <div>
-                  <p className="text-sm text-secondary">Team</p>
-                  <p className="text-xl font-semibold">Design & Engineering</p>
+                  <p className="text-sm text-secondary">
+                    <Translation i18nKey="home.highlights.teamLabel" />
+                  </p>
+                  <p className="text-xl font-semibold">
+                    <Translation i18nKey="home.highlights.teamValue" />
+                  </p>
                 </div>
               </div>
             </div>
@@ -133,30 +126,37 @@ export default function Home() {
       <section className="section-shell">
         <Container className="space-y-8 reveal" data-animate="fade">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">About Preview</p>
-            <h2 className="heading-accent text-3xl font-semibold">Who we are</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="home.aboutPreview.kicker" />
+            </p>
+            <h2 className="heading-accent text-3xl font-semibold">
+              <Translation i18nKey="home.aboutPreview.title" />
+            </h2>
             <p className="max-w-3xl text-secondary">
-              Nova Code AB is a Swedish software development company specializing in modern, scalable, and user-centered digital
-              products. We build mobile apps, web applications, SaaS platforms, and custom software solutions with teams based in
-              Göteborg.
+              <Translation i18nKey="home.aboutPreview.paragraphOne" />
             </p>
             <p className="max-w-3xl text-secondary">
-              Learn more about our story, team, and approach to mobile app development in Göteborg on the dedicated About page.
+              <Translation i18nKey="home.aboutPreview.paragraphTwo" />
             </p>
             <Link href="/about" className="button-outline w-fit" title="Read more about Nova Code AB">
-              About Nova Code AB
+              <Translation i18nKey="home.aboutPreview.cta" />
             </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {servicePreview.map((service) => (
-              <div key={service} className="card-surface reveal p-5" data-animate="fade">
-                <p className="text-lg font-semibold">{service}</p>
-                <p className="mt-2 text-sm text-secondary">Sharp execution, transparent delivery, and products built for growth.</p>
-              </div>
-            ))}
+            <TranslatedList<string>
+              i18nKey="home.servicePreview.items"
+              render={(service) => (
+                <div key={service} className="card-surface reveal p-5" data-animate="fade">
+                  <p className="text-lg font-semibold">{service}</p>
+                  <p className="mt-2 text-sm text-secondary">
+                    <Translation i18nKey="home.servicePreview.description" />
+                  </p>
+                </div>
+              )}
+            />
           </div>
           <Link href="/services" className="button-outline w-fit" title="View all Nova Code AB services">
-            View all services
+            <Translation i18nKey="home.servicePreview.cta" />
           </Link>
         </Container>
       </section>
@@ -164,25 +164,25 @@ export default function Home() {
       <section className="section-shell">
         <Container className="reveal grid gap-8 lg:grid-cols-2 lg:items-center" data-animate="fade">
           <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Featured Product</p>
-            <h2 className="heading-accent text-3xl font-semibold">Nova Play — Mobile Gaming Application</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="home.featuredProduct.kicker" />
+            </p>
+            <h2 className="heading-accent text-3xl font-semibold">
+              <Translation i18nKey="home.featuredProduct.title" />
+            </h2>
             <p className="text-secondary">
-              Nova Play is our flagship mobile gaming platform designed to deliver fun, interactive, and reward-based experiences
-              for Android users in Sweden and beyond.
+              <Translation i18nKey="home.featuredProduct.description" />
             </p>
             <ul className="space-y-3 text-secondary">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent-gold)]" />
-                <span>Immersive, high-performance mobile experience.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent-gold)]" />
-                <span>Reward mechanisms that keep players engaged.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent-gold)]" />
-                <span>Built with scalable cloud-first infrastructure.</span>
-              </li>
+              <TranslatedList<string>
+                i18nKey="home.featuredProduct.bullets"
+                render={(bullet) => (
+                  <li key={bullet} className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent-gold)]" />
+                    <span>{bullet}</span>
+                  </li>
+                )}
+              />
             </ul>
             <Link
               href="https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en"
@@ -191,15 +191,16 @@ export default function Home() {
               rel="noreferrer"
               title="Download Nova Play Android game on Google Play"
             >
-              Download on Google Play
+              <Translation i18nKey="home.featuredProduct.cta" />
             </Link>
           </div>
           <div className="card-surface reveal p-6" data-animate="fade">
             <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <h3 className="text-xl font-semibold">Our promise</h3>
+              <h3 className="text-xl font-semibold">
+                <Translation i18nKey="home.featuredProduct.promiseTitle" />
+              </h3>
               <p className="mt-2 text-secondary">
-                We design and engineer every Nova Code AB product to feel premium: minimalistic visuals, precise motion, and
-                resilient technology layers that scale with your audience.
+                <Translation i18nKey="home.featuredProduct.promiseCopy" />
               </p>
             </div>
           </div>
@@ -209,32 +210,38 @@ export default function Home() {
       <section id="reviews" className="section-shell">
         <Container className="space-y-10 reveal" data-animate="fade">
           <div className="space-y-3 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">App Reviews</p>
-            <h2 className="heading-accent text-3xl font-semibold">What Our Users Say</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              <Translation i18nKey="home.reviews.kicker" />
+            </p>
+            <h2 className="heading-accent text-3xl font-semibold">
+              <Translation i18nKey="home.reviews.title" />
+            </h2>
             <p className="text-secondary md:text-lg">
-              Users around the world enjoy Nova Play for its fun experience, smooth performance, and rewarding system. Here are
-              some of the latest reviews from our community.
+              <Translation i18nKey="home.reviews.description" />
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {reviews.map((review) => (
-              <div
-                key={review.user}
-                className="card-surface reveal flex h-full flex-col gap-4 p-5"
-                data-animate="fade"
-              >
-                <div className="flex items-center gap-1 text-[var(--accent-gold)]" aria-label="5 star rating">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <span key={index} aria-hidden="true">
-                      ★
-                    </span>
-                  ))}
+            <TranslatedList<{ text: string; user: string }>
+              i18nKey="home.reviews.items"
+              render={(review, index) => (
+                <div
+                  key={`${review.user}-${index}`}
+                  className="card-surface reveal flex h-full flex-col gap-4 p-5"
+                  data-animate="fade"
+                >
+                  <div className="flex items-center gap-1 text-[var(--accent-gold)]" aria-label="5 star rating">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <span key={starIndex} aria-hidden="true">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed">{review.text}</p>
+                  <p className="text-sm text-secondary">{review.user}</p>
                 </div>
-                <p className="text-lg leading-relaxed">{review.text}</p>
-                <p className="text-sm text-secondary">{review.user}</p>
-              </div>
-            ))}
+              )}
+            />
           </div>
 
           <div className="flex justify-center">
@@ -245,7 +252,7 @@ export default function Home() {
               rel="noreferrer"
               title="See Nova Play reviews on Google Play"
             >
-              See More Reviews on Google Play
+              <Translation i18nKey="home.reviews.cta" />
             </Link>
           </div>
         </Container>
