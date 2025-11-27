@@ -1,4 +1,6 @@
-const BASE_URL = "https://novacode.se";
+import { siteConfig } from "@/config/site";
+
+const BASE_URL = siteConfig.domain;
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },

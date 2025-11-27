@@ -1,37 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import { Container } from "@/components/Container";
+import { keywords, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Nova Code AB | Software Development, Mobile Apps & SaaS in Sweden",
   description:
     "Discover Nova Code AB in Göteborg: software development experts crafting mobile apps, SaaS platforms, and custom digital solutions that help teams scale.",
-  keywords: [
-    "nova code ab",
-    "software development",
-    "mobile apps",
-    "SaaS",
-    "web development",
-    "Göteborg tech company",
-    "app development Sweden",
-    "Software development Sweden",
-    "Mobile app development Göteborg",
-    "Custom software solutions",
-    "Nova Play app",
-  ],
+  keywords,
   authors: [{ name: "Nova Code AB" }],
   alternates: {
-    canonical: "https://novacode.se",
+    canonical: siteConfig.domain,
   },
   openGraph: {
     title: "Nova Code AB | Software Development, Mobile Apps & SaaS",
     description:
       "Swedish product studio delivering custom software solutions, mobile app development, and SaaS engineering from Göteborg.",
-    url: "https://novacode.se",
+    url: siteConfig.domain,
     type: "website",
     images: [
       {
-        url: "/img/hero.png",
+        url: siteConfig.ogImagePath,
         width: 1200,
         height: 630,
         alt: "Nova Code AB software development and mobile apps hero",
@@ -43,7 +33,7 @@ export const metadata: Metadata = {
     title: "Nova Code AB | Software Development, Mobile Apps & SaaS",
     description:
       "Nova Code AB crafts mobile apps, SaaS platforms, and custom software solutions for businesses across Sweden.",
-    images: ["/img/hero.png"],
+    images: [siteConfig.ogImagePath],
     creator: "@novacodeab",
   },
 };

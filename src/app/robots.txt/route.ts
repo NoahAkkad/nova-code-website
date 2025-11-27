@@ -1,7 +1,9 @@
+import { siteConfig } from "@/config/site";
+
 const ROBOTS_TXT = `User-agent: *
 Allow: /
 
-Sitemap: https://novacode.se/sitemap.xml`;
+Sitemap: ${siteConfig.domain}/sitemap.xml`;
 
 export function GET() {
   return new Response(ROBOTS_TXT, {
