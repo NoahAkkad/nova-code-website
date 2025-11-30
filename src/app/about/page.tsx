@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Container } from "@/components/Container";
 import { keywords, siteConfig } from "@/config/site";
@@ -89,6 +90,17 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <Script id="ld-json-organization-about" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.domain,
+          logo: `${siteConfig.domain}${siteConfig.logoPath}`,
+          sameAs: [siteConfig.social.linkedin],
+        })}
+      </Script>
     </div>
   );
 }

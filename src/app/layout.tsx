@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -84,75 +83,6 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
 
-        <Script id="ld-json-organization" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: siteConfig.name,
-            url: siteConfig.domain,
-            logo: `${siteConfig.domain}${siteConfig.logoPath}`,
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: siteConfig.address.street,
-              postalCode: siteConfig.address.postalCode,
-              addressLocality: siteConfig.address.city,
-              addressRegion: siteConfig.address.region,
-              addressCountry: siteConfig.address.country,
-            },
-            sameAs: [
-              siteConfig.domain,
-              siteConfig.social.linkedin,
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              contactType: "customer service",
-              email: siteConfig.contactEmail,
-              telephone: siteConfig.phone,
-              areaServed: "SE",
-              availableLanguage: ["en", "sv"],
-            },
-          })}
-        </Script>
-        <Script id="ld-json-website" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            url: siteConfig.domain,
-            name: siteConfig.name,
-            sameAs: [
-              siteConfig.domain,
-              siteConfig.social.linkedin,
-            ],
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `${siteConfig.domain}/?s={search_term_string}`,
-              "query-input": "required name=search_term_string",
-            },
-          })}
-        </Script>
-        <Script id="ld-json-localbusiness" type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: siteConfig.name,
-            image: `${siteConfig.domain}${siteConfig.logoPath}`,
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: siteConfig.address.street,
-              postalCode: siteConfig.address.postalCode,
-              addressLocality: siteConfig.address.city,
-              addressRegion: siteConfig.address.region,
-              addressCountry: siteConfig.address.country,
-            },
-            url: siteConfig.domain,
-            telephone: siteConfig.phone,
-            email: siteConfig.contactEmail,
-            sameAs: [
-              siteConfig.domain,
-              siteConfig.social.linkedin,
-            ],
-          })}
-        </Script>
       </body>
     </html>
   );

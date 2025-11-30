@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 import { Container } from "@/components/Container";
 import { keywords, siteConfig } from "@/config/site";
@@ -250,6 +251,32 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <Script id="ld-json-organization-home" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.domain,
+          logo: `${siteConfig.domain}${siteConfig.logoPath}`,
+          sameAs: [siteConfig.social.linkedin],
+        })}
+      </Script>
+
+      <Script id="ld-json-website-home" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.name,
+          url: siteConfig.domain,
+          sameAs: [siteConfig.social.linkedin],
+          potentialAction: {
+            "@type": "SearchAction",
+            target: `${siteConfig.domain}/?s={search_term_string}`,
+            "query-input": "required name=search_term_string",
+          },
+        })}
+      </Script>
     </div>
   );
 }

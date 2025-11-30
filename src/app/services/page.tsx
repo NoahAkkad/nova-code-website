@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 import { Container } from "@/components/Container";
 import { keywords, siteConfig } from "@/config/site";
@@ -108,6 +109,27 @@ export default function ServicesPage() {
           </Link>
         </Container>
       </section>
+
+      <Script id="ld-json-services" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: `${siteConfig.name} Software Development Services`,
+          serviceType: services.map((service) => service.title),
+          provider: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.domain,
+            logo: `${siteConfig.domain}${siteConfig.logoPath}`,
+            sameAs: [siteConfig.social.linkedin],
+          },
+          areaServed: "SE",
+          availableChannel: {
+            "@type": "ServiceChannel",
+            serviceUrl: `${siteConfig.domain}/services`,
+          },
+        })}
+      </Script>
     </div>
   );
 }
