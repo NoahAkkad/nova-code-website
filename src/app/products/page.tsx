@@ -119,30 +119,25 @@ export default function ProductsPage() {
         </Container>
       </section>
 
-      <Script id="ld-json-product" type="application/ld+json">
+      <Script id="ld-json-softwareapplication" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "SoftwareApplication",
           name: "Nova Play",
-          brand: {
-            "@type": "Organization",
-            name: siteConfig.name,
-            url: siteConfig.domain,
-            logo: `${siteConfig.domain}${siteConfig.logoPath}`,
-            sameAs: [siteConfig.domain, siteConfig.social.linkedin],
-          },
+          applicationCategory: "GameApplication",
+          operatingSystem: "Android",
           description:
             "Nova Play is a mobile gaming and reward app for Android built by Nova Code AB in Sweden, delivering immersive gameplay and reliable cloud performance.",
           image: `${siteConfig.domain}${siteConfig.ogImagePath}`,
           url: `${siteConfig.domain}/products`,
-          category: "MobileApplication",
-          operatingSystem: "Android",
-          offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "SEK",
-            url: "https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en",
-            availability: "https://schema.org/InStock",
+          downloadUrl:
+            "https://play.google.com/store/search?q=nova+play+and+earn+real+money&c=apps&hl=en",
+          creator: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.domain,
+            logo: `${siteConfig.domain}${siteConfig.logoPath}`,
+            sameAs: [siteConfig.social.linkedin],
           },
         })}
       </Script>
