@@ -5,11 +5,6 @@ Modern multi-page marketing site for Nova Code AB built with Next.js 14 and depl
 ## Live Site
 - https://novacode.se
 
-## Screenshots
-Screenshots are not checked into the repository. To add them, place image files under `public/screenshots/` and update the references below:
-- `![Home page](public/screenshots/home.png)`
-- `![Services page](public/screenshots/services.png)`
-
 ## Features
 - Dark and gold brand styling for all pages.
 - Multi-page marketing flow covering Home, About, Services, Products, and Contact.
