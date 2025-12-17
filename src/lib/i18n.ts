@@ -1,6 +1,6 @@
 export type Language = "en" | "se";
 
-type TranslationValue = string | TranslationValue[] | Record<string, TranslationValue>;
+type TranslationValue = any;
 
 export const translations: Record<Language, Record<string, TranslationValue>> = {
   en: {

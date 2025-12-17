@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { RootClient } from "@/components/RootClient";
 import { keywords, siteConfig } from "@/config/site";
-
-const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
@@ -72,7 +69,7 @@ export default function RootLayout({
           content={googleSiteVerification}
         />
       </head>
-      <body className={`${inter.className} bg-black text-white antialiased`}>
+      <body className="bg-black text-white antialiased font-sans">
         <RootClient>{children}</RootClient>
       </body>
     </html>
