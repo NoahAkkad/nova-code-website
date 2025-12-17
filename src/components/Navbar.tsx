@@ -1,18 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Container } from "./Container";
-
-const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Contact", href: "/contact" },
-];
+import { useLanguage } from "@/components/LanguageProvider";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const links = useMemo(
+    () => [
+      { label: t("common.nav.home"), href: "/" },
+      { label: t("common.nav.about"), href: "/about" },
+      { label: t("common.nav.services"), href: "/services" },
+      { label: t("common.nav.products"), href: "/products" },
+      { label: t("common.nav.contact"), href: "/contact" },
+    ],
+    [t]
+  );
+
+  const handleLanguageChange = (lang: "en" | "se") => {
+    setLanguage(lang);
+    setOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/85 shadow-[0_10px_30px_rgba(0,0,0,0.4)] backdrop-blur">
@@ -23,7 +33,7 @@ export const Navbar = () => {
           </div>
           <div className="leading-tight">
             <p className="text-base font-semibold">Nova Code AB</p>
-            <p className="text-xs text-white/70">Premium software company</p>
+            <p className="text-xs text-white/70">{t("common.headerTagline")}</p>
           </div>
         </Link>
 
@@ -36,18 +46,34 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+            {(["en", "se"] as const).map((lang, index) => (
+              <span key={lang} className="flex items-center gap-2">
+                {index === 1 && <span aria-hidden="true">|</span>}
+                <button
+                  onClick={() => handleLanguageChange(lang)}
+                  className={`transition hover:text-[var(--accent-gold)] ${
+                    language === lang ? "text-[var(--accent-gold)]" : ""
+                  }`}
+                  type="button"
+                >
+                  {t(`common.languageToggle.${lang}`)}
+                </button>
+              </span>
+            ))}
+          </div>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
           <button
             onClick={() => setOpen((prev) => !prev)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white"
-            aria-label="Toggle navigation"
+            aria-label={t("common.skipNavLabel")}
             aria-expanded={open}
             aria-controls="mobile-menu"
             type="button"
           >
-            <span className="sr-only">Toggle navigation</span>
+            <span className="sr-only">{t("common.skipNavLabel")}</span>
             <div className="space-y-1.5">
               <span className={`block h-0.5 w-6 bg-white transition ${open ? "translate-y-2 rotate-45" : ""}`} />
               <span className={`block h-0.5 w-6 bg-white transition ${open ? "opacity-0" : ""}`} />
@@ -70,6 +96,22 @@ export const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            <div className="flex items-center gap-2 px-3 pt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+              {(["en", "se"] as const).map((lang, index) => (
+                <span key={lang} className="flex items-center gap-2">
+                  {index === 1 && <span aria-hidden="true">|</span>}
+                  <button
+                    onClick={() => handleLanguageChange(lang)}
+                    className={`transition hover:text-[var(--accent-gold)] ${
+                      language === lang ? "text-[var(--accent-gold)]" : ""
+                    }`}
+                    type="button"
+                  >
+                    {t(`common.languageToggle.${lang}`)}
+                  </button>
+                </span>
+              ))}
+            </div>
           </Container>
         </div>
       )}

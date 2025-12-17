@@ -3,6 +3,8 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 
+import { useLanguage } from "@/components/LanguageProvider";
+
 interface FormErrors {
   name?: string;
   email?: string;
@@ -14,6 +16,7 @@ const emailPattern =
   /^(?:[a-zA-Z0-9_'^&/+-])+(?:\.(?:[a-zA-Z0-9_'^&/+-])+)*@(?:(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,})$/;
 
 export function ContactForm() {
+  const { t } = useLanguage();
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -35,21 +38,21 @@ export function ContactForm() {
     const nextErrors: FormErrors = {};
 
     if (!values.name.trim()) {
-      nextErrors.name = "Name is required.";
+      nextErrors.name = t("contactForm.nameError");
     }
 
     if (!values.email.trim()) {
-      nextErrors.email = "Email is required.";
+      nextErrors.email = t("contactForm.emailErrorRequired");
     } else if (!emailPattern.test(values.email.trim())) {
-      nextErrors.email = "Enter a valid email address.";
+      nextErrors.email = t("contactForm.emailErrorInvalid");
     }
 
     if (!values.subject.trim()) {
-      nextErrors.subject = "Subject is required.";
+      nextErrors.subject = t("contactForm.subjectError");
     }
 
     if (!values.message.trim()) {
-      nextErrors.message = "Message cannot be empty.";
+      nextErrors.message = t("contactForm.messageError");
     }
 
     setErrors(nextErrors);
@@ -100,17 +103,17 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       noValidate
     >
-      <input type="hidden" name="_subject" value="New message from Nova Code website" />
+      <input type="hidden" name="_subject" value={t("contactForm.hiddenSubject")} />
       <div>
         <label className="block text-sm font-semibold text-white" htmlFor="contact-name">
-          Name
+          {t("contactForm.nameLabel")}
         </label>
         <input
           type="text"
           id="contact-name"
           name="name"
           className="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
-          placeholder="Your name"
+          placeholder={t("contactForm.namePlaceholder")}
           value={values.name}
           onChange={handleChange("name")}
           required
@@ -126,14 +129,14 @@ export function ContactForm() {
       </div>
       <div>
         <label className="block text-sm font-semibold text-white" htmlFor="contact-email">
-          Email
+          {t("contactForm.emailLabel")}
         </label>
         <input
           type="email"
           id="contact-email"
           name="email"
           className="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
-          placeholder="Your email"
+          placeholder={t("contactForm.emailPlaceholder")}
           value={values.email}
           onChange={handleChange("email")}
           required
@@ -151,14 +154,14 @@ export function ContactForm() {
       </div>
       <div>
         <label className="block text-sm font-semibold text-white" htmlFor="contact-subject">
-          Subject
+          {t("contactForm.subjectLabel")}
         </label>
         <input
           type="text"
           id="contact-subject"
           name="subject"
           className="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
-          placeholder="Project subject"
+          placeholder={t("contactForm.subjectPlaceholder")}
           value={values.subject}
           onChange={handleChange("subject")}
           required
@@ -174,14 +177,14 @@ export function ContactForm() {
       </div>
       <div>
         <label className="block text-sm font-semibold text-white" htmlFor="contact-message">
-          Message
+          {t("contactForm.messageLabel")}
         </label>
         <textarea
           rows={4}
           id="contact-message"
           name="message"
           className="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none"
-          placeholder="Tell us about your goals"
+          placeholder={t("contactForm.messagePlaceholder")}
           value={values.message}
           onChange={handleChange("message")}
           required
@@ -195,15 +198,15 @@ export function ContactForm() {
         ) : null}
       </div>
       <button type="submit" className="button-outline w-full justify-center">
-        Submit
+        {t("contactForm.submit")}
       </button>
       <div role="status" aria-live="polite" className="min-h-[1.5rem]">
         {status === "success" && (
-          <p className="text-sm text-[var(--accent-gold)]">Thanks for reaching out! We will respond within two business days.</p>
+          <p className="text-sm text-[var(--accent-gold)]">{t("contactForm.success")}</p>
         )}
         {status === "error" && (
           <p className="text-sm text-[var(--accent-gold)]">
-            Something went wrong. Please try again.
+            {t("contactForm.error")}
           </p>
         )}
       </div>
