@@ -1,45 +1,75 @@
-# Nova Code Website
+# Nova Code AB Website
 
-Marketing site for Nova Code built with **Next.js 14 (App Router)** and **Tailwind CSS**. The layout is fully responsive, includes a dark mode, and is optimized for performance while staying easy to customize.
+Modern multi-page marketing site for Nova Code AB built with Next.js 14 and deployed on Vercel.
 
-## Requirements
-- Node.js 18 or newer
-- npm (bundled with Node)
+## Live Site
+- https://novacode.se
 
-## Run the project locally
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the dev server:
-   ```bash
-   npm run dev
-   ```
-3. Open the URL printed in the terminal (usually `http://localhost:3000`). Edits hot-reload automatically.
+## Screenshots
+Screenshots are not checked into the repository. To add them, place image files under `public/screenshots/` and update the references below:
+- `![Home page](public/screenshots/home.png)`
+- `![Services page](public/screenshots/services.png)`
 
-## Key npm scripts
-- `npm run dev` — start the development server.
-- `npm run build` — produce an optimized production build.
-- `npm start` — serve the production build after running `npm run build`.
-- `npm run lint` — run ESLint using the project configuration.
+## Features
+- Dark and gold brand styling for all pages.
+- Multi-page marketing flow covering Home, About, Services, Products, and Contact.
+- English/Swedish language toggle via the header switcher.
+- SEO basics with `sitemap.xml` and `robots.txt` already present.
+- Contact form submissions handled via Formspree.
+- Built on Next.js App Router with responsive layouts.
 
-## Project structure
-- `src/app/` — Next.js pages/routes using the App Router (home and derived sections).
-- `src/components/` — reusable UI building blocks (buttons, content sections, hero elements, etc.).
-- `public/` — static assets such as images and icons.
-- `tailwind.config.ts` and `postcss.config.mjs` — Tailwind/PostCSS configuration.
+## Tech Stack
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- Vercel (hosting)
 
-## Deploying to Vercel
-The project is ready for Vercel and can auto-deploy from the repository:
-1. Connect the repo to your Vercel account and choose the branch to deploy (typically `main`).
-2. Each `git push` triggers a new build automatically; track its status in the Vercel dashboard.
-3. To add a custom domain: go to **Project → Settings → Domains** in Vercel, add the domain, and follow the DNS instructions (usually a CNAME to `cname.vercel-dns.com`).
-4. Once DNS is active, updates appear on the domain as soon as each deployment finishes.
+## Getting Started
+### Prerequisites
+- Node.js 18+ and npm
 
-## Quick customization
-- Update copy and images in `src/app` and `src/components`.
-- Adjust the visual theme (colors/fonts) via Tailwind settings in `tailwind.config.ts`.
-- Add analytics or third-party scripts in the App Router layout at `src/app/layout.tsx`.
+### Installation
+```bash
+npm install
+```
+
+### Run Locally
+```bash
+npm run dev
+```
+Then open `http://localhost:3000`.
+
+### Build
+```bash
+npm run build
+```
+
+### Start (production server)
+```bash
+npm start
+```
+
+## Environment Variables
+- No secret keys are required to run the site locally.
+- The contact form uses a Formspree endpoint that is hard-coded to `https://formspree.io/f/movovypk` in `src/components/ContactForm.tsx`. Update this value there if you need a different endpoint.
+- Never commit private keys or credentials to the repository.
+
+## Deployment (Vercel)
+1. Push your branch to GitHub (or another VCS host).
+2. In Vercel, create a new project and import this repository.
+3. Confirm the defaults: Framework = Next.js, Build Command = `npm run build`, Output Directory = `.next` (handled automatically).
+4. Add any required environment variables (none needed by default) and deploy.
+5. Do not commit the `.next` build output; Vercel will generate it per deployment.
 
 ## Contributing
-Suggestions and fixes are welcome. Please open an Issue or submit a Pull Request after confirming `npm run lint` passes and the project runs locally.
+Pull requests are welcome. Please:
+- Open an issue for discussion if you are introducing significant changes.
+- Ensure `npm run lint` and relevant checks pass before submitting.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+- Email: info@novacode.se
+- Location: Gothenburg, Sweden
